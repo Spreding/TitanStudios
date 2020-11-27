@@ -1,20 +1,93 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ContactController!{% endblock %}
+{% block title %}Contact{% endblock %}
+{% block titleHeader %}Contact{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+  
+                <h2 >Vous pouvez nous contacter :</h2>
+        <div class="textContact row">
+            
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+            <ul>
+                <li>
+                    Par téléphone
+                    <ul>
+                        <li>06 78 43 52 04</li>
+                        <li>06 12 48 61 41</li>
+                    </ul>
+                </li>
+                <li>Par mail</li>
+                <ul>
+                    <li><a href="mailto:stud.titan@gmail.com">stud.titan@gmail.com</a></li>
+                </ul>
+            </ul>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/ProjetsSymfony/TitanStudios/TitanStudios/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/ProjetsSymfony/TitanStudios/TitanStudios/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
-</div>
+            <!-- <p>D'autres Information?</p> -->
+        </div>
+
+                
+           <div class="row">
+           
+               <div class="col-lg-12 ">
+               <h2>Ou vous pouvez remplir ce formulaire</h2>
+                    {# <form id="contact-form" method="post" action="contact.php" role="form">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="name">Nom & Prénom <span class="blue">*</span></label>
+                                <input id="name" type="text" name="name" class="form-control" placeholder="Votre Nom et prénom" required>
+                                <p class="comments"><?=$array["nameError"]?></p>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email">Email <span class="blue">*</span></label>
+                                <input id="email" type="email" name="email" class="form-control" placeholder="Votre Email" required>
+                                <p class="comments"><?=$array["emailError"]?></p>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="company">Société</label>
+                                <input id="company" type="text" name="company" class="form-control" placeholder="Votre société">
+                                <p class="comments"><?=$array["companyError"]?></p>
+                            </div>
+                            <div class="col-md-4">
+                                <label for="phone">Téléphone</label>
+                                <input id="phone" type="tel" name="phone" class="form-control" placeholder="Votre Téléphone">
+                                <p class="comments"><?=$array["phoneError"]?></p>
+                            </div>
+                            <div class="col-md-4">
+                            <label for="category">Catégorie de projet <span class="blue">*</span></label>
+                            <select id="category" name="category" class="form-control">
+                              <option value="plusInfo">Plus d'information</option>
+                              <option value="jeuVideo">Jeu Vidéo</option>
+                              <option value="web">WEB</option>
+                              <option value="application">Application</option>
+                              <option value="autres">Autres</option>
+                            </select>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="message">Message <span class="blue">*</span></label>
+                                <textarea id="message" name="message" class="form-control" placeholder="Votre Message" rows="4" required></textarea>
+                                <p class="comments"><?=$array["messageError"]?></p>
+                            </div>
+                            <div class="col-md-12">
+                                <p class="blue"><strong>* Ces informations sont requises.</strong></p>
+                            </div>
+                            <div class="col-md-12">
+                                <input type="submit" class="btn-lg btn-primary buttonContact" value="Envoyer">
+                            </div>    
+                        </div>
+                    </form> #}
+                    {{form_start(form)}}
+                        <div class="row">
+                            <div class="col-md-4">{{form_row(form.firstname)}}</div>
+                            <div class="col-md-4">{{form_row(form.lastname)}}</div>
+                            <div class="col-md-4">{{form_row(form.phone)}}</div>
+                            <div class="col-md-8">{{form_row(form.email)}}</div>
+                            <div class="col-md-4">{{form_row(form.categorie)}}</div>
+                            <div class="col-md-12">{{form_row(form.texte)}}</div>
+                            <div class="col-md-12">{{form_row(form.submit)}}</div>
+                        </div>
+                    {{form_end(form)}}
+                    
+                </div>
+           </div>
 {% endblock %}

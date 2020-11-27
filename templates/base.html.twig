@@ -1,12 +1,124 @@
 <!DOCTYPE html>
+
 <html>
     <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}TitanStudios{% endblock %}</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+        
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+        
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Holtwood+One+SC" rel="stylesheet" type="text/css">
+        <script src="https://kit.fontawesome.com/de97e88153.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+        
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/script.js"></script>
     </head>
+    
+
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+
+        {# Header #}
+        <header>
+    <nav class="navHeader navbar navbar-expand-md navbar-light">
+    
+    <a href="{{path("home")}}"><img src="assets/img/Logos_minimalistes_blanc.png" class="logo"/></a>
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarToggler">
+            <ul class="nav navbar-nav nav-pills">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{path("home")}}"><button class="dropbtn">ACCUEIL</button></a>
+                </li>
+                <li class="nav-item" >
+                    <div class="dropdown" id="dropdownMenu">
+                        <a class="nav-link" href="{{path("realisations")}}">
+                            <button class="dropbtn">RÉALISATIONS</button>
+                            </a>
+                      <div class="dropdown-content">
+
+        
+    {# foreach ($realisationsHighlight as $realisation) 
+    {
+        echo'<a href="realisations.php#realisation'.$realisation['id'].'">'.$realisation['titre'].'</a>';
+    } #}
+
+</div>
+                    </div>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" href="{{path("equipe")}}" ><button class="dropbtn">QUI SOMMES-NOUS?</button></a>
+                </li>
+                <li class="nav-item" >
+                    <a class="nav-link" href="{{path("contact")}}" ><button class="dropbtn">CONTACT</button></a>
+                </li>
+
+                
+            </ul>
+            </div>
+            
+            
+        </nav>
+            
+        <div class="divHeader">
+            <h1 class="textTitre">{% block titleHeader %}{% endblock %}</h1>
+        </div>
+        </header>
+
+        {# Body #}
+
+        <div class="container site">
+            {% block body %}
+                
+            {% endblock %}
+
+        </div>
+        
+        {# Footer #}
+    <footer>
+
+<div class="container">
+    <div class="logoFootDiv">
+        <div class=""> <img src="assets/img/Logos_minimalistes_blanc.png" class="logoFoot "/></div>
+        <!-- <div class="offset-2 col-1"><img src="images/Classic_marvel_Titan.png" class="logoFootTitan "/></div> -->
+    </div>
+
+    <div >
+    <!-- <div class="col-6"> -->
+       <p class="center"> <a href="{{path("contact")}}" class="linkFooter">Contact</a> -
+    <!-- </div>
+    <div class="col-6"> -->
+        <a href="{{path("mentions_legales")}}" class="linkFooter">Mentions Légales</a></p>
+    <!-- </div> -->
+    </div>
+
+    <!-- <div class="row contactFooter">
+    <div class="offset-4 col-1 "> <img src="images/logo-twitter-white.png" class="logoFootSocial cursorPointer"/></div>
+    <div class="col-1 "> <img src="images/insta-logo-white.png" class="logoFootSocial cursorPointer"/></div>
+    <div class="col-1 "> <img src="images/logo-linkedin-white.png" class="logoFootSocial cursorPointer"/></div>
+    <div class="col-1 "> <img src="images/steam-logo-white.png" class="logoFootSocial cursorPointer"/></div>
+    </div> -->
+
+    <!-- <div class=" contactFooter">
+    <a class="firstLogo" href="https://twitter.com/home?lang=fr" target="_blank" rel="noopener noreferrer"><img src="images/logo-twitter-white.png" class="logoFootSocial cursorPointer "/></a>
+    <a class="secondLogo" href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer"><img src="images/insta-logo-white.png" class="logoFootSocial cursorPointer"/></a>
+    <a class="thirdLogo" href="https://fr.linkedin.com/" target="_blank" rel="noopener noreferrer"><img src="images/logo-linkedin-white.png" class="logoFootSocial cursorPointer"/></a>
+    <a class="fourthLogo" href="https://store.steampowered.com/?l=french" target="_blank" rel="noopener noreferrer"><img src="images/steam-logo-white.png" class="logoFootSocial cursorPointer"/></a>
+    </div> -->
+</div>
+
+</footer>
     </body>
+    
 </html>

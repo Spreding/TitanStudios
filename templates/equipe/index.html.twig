@@ -1,20 +1,39 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello EquipeController!{% endblock %}
+{% block title %}Équipe{% endblock %}
+{% block titleHeader %}Équipe{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/ProjetsSymfony/TitanStudios/TitanStudios/src/Controller/EquipeController.php'|file_link(0) }}">src/Controller/EquipeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/ProjetsSymfony/TitanStudios/TitanStudios/templates/equipe/index.html.twig'|file_link(0) }}">templates/equipe/index.html.twig</a></code></li>
-    </ul>
-</div>
+<p class="presentationTitan">Presentation</p>
+            
+            <div class="row">
+                
+            
+                {# <?php
+				$statementStaff = $db->query('SELECT * FROM staff');
+                $staffs = $statementStaff->fetchAll();
+                $id = 0;
+                foreach ($staffs as $staff) 
+                {  
+                    $id++;
+                    if($id%2 != 0)
+                    {
+                        echo '<div class="card col-12 col-sm-6 col-md-5">';
+                    }
+                    else
+                    {
+                        echo '<div class="card col-12 col-sm-6 col-md-5 ml-auto presentationBody">';
+                    }
+                    
+                    echo '<img src="images/'.$staff['image'].'" class="card-img-top" alt="...">';
+                    echo'<div class="card-body">';
+                    echo'<h5 class="card-title">'.utf8_decode($staff['nom']).' '.utf8_decode($staff['prenom']).' - '. utf8_decode($staff['role']).'</h5>';
+                    echo'<p class="card-text">'.utf8_decode($staff['description']).'</p>';
+                    echo'</div>
+                        </div>';
+                }
+    ?> #}
+            
+                
+            </div>
 {% endblock %}

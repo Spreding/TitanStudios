@@ -1,20 +1,55 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
-
+{% block title %}Accueil{% endblock %}
+{% block titleHeader %}Accueil{% endblock %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+<h2 class="sousTitre">ACTUALITÉ</h2>
+            <div class="row">
+            
+               <div class="containActu col-12 col-md-6">
+             
+             
+                    
+             {# <?php
+				$statementActu = $db->query('SELECT * FROM actualite ORDER BY id DESC');
+                $actualites = $statementActu->fetchAll();
+    
+                $iterationMax = 4;
+                $iterationActu = 0;
+                $iteration = 0;
+    
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+                foreach($actualites as $actualite)
+                {
+                    $iterationActu++;
+                    if($iterationActu <= $iterationMax)
+                    {
+                        echo'<div class="containActu col-12 col-md-6 "> <a href="ActuPage.php?id='. $actualite['id'] .'" class="linkActu">';
+                    }
+                    else
+                    {
+                        echo'<div class="containActu col-12 col-md-6 Invisible"><a href="ActuPage.php?id='. $actualite['id'] .'" class="linkActu">';
+                    }
+                    echo '<div class="Actu"> 
+                        <div class="article row">';
+                    echo'<img src="images/'.$actualite['image'].'" class="insideArticle col-5"/>';
+                    echo'<div class="col-7">
+                    <h4>'.utf8_decode($actualite['titre']).'</h4>
+                    <p class="txtActu">'.utf8_decode($actualite['description']).'</p>
+                    </div>';
+                    echo'</div>
+                        </div> 
+                        </a>
+                        </div>';
+                    
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'D:/ProjetsSymfony/TitanStudios/TitanStudios/src/Controller/HomeController.php'|file_link(0) }}">src/Controller/HomeController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'D:/ProjetsSymfony/TitanStudios/TitanStudios/templates/home/index.html.twig'|file_link(0) }}">templates/home/index.html.twig</a></code></li>
-    </ul>
-</div>
+                    
+                }
+   ?> #}
+              
+            </div>
+            
+            {# <?php if($iterationActu > $iterationMax){ ?>
+            <button type="button" class="btn btn-primary btn-lg RefreshActu" id="refreshBut" onclick="RefreshActualite()">Voir plus</button>
+         <?php }?> #}
 {% endblock %}

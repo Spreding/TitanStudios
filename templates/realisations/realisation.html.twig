@@ -1,0 +1,97 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réalisation{% endblock %}
+{% block titleHeader %}Réalisation{% endblock %}
+
+
+{% block body %}
+
+
+            {# <?php
+            // echo "1";
+           foreach($reals as $real)
+           {
+            //    echo "1";
+            // echo'<p class="dateActu">'.$real['lien1'].'</p>';
+
+            //Carousel
+            echo'<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" data-slide-to="3"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner isNotModal">
+    ';
+    echo'<div class="carousel-item active">
+        <img class="d-block w-100" src="images/'.$real['imagePrincipale'].'">
+        </div>';
+      echo'<div class="carousel-item">
+      <img class="d-block w-100" src="images/'.$real['imageSecondaire1'].'">
+      </div>';
+      echo'<div class="carousel-item">
+      <img class="d-block w-100" src="images/'.$real['imageSecondaire2'].'">
+    </div>';    
+    echo'<div class="carousel-item">
+    <img class="d-block w-100" src="images/'.$real['imageSecondaire3'].'" >
+  </div>';
+    echo'</div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+  </div>';
+    
+  
+            echo'<p class="txtActu">'.utf8_decode($real['texte']).'</p>';
+           }
+            
+           if(count($links) > 0)
+           {
+             ?>
+
+<table class="table table-striped">
+  <thead class="tableHead">
+    <tr>
+      <th scope="col" class="bordered">Plateforme</th>
+      <th scope="col" colspan="2">Liens</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php foreach($links as $link){
+   
+      ?>
+<?php if($link['nomLien']!="" && $link['lien']!= ""){?>
+    <tr>
+      
+    <?='<td class="platformReal">'.utf8_decode($link['nomLien']).' </td>'?>
+    <?='<td colspan="2" class="lienReal"><a class"lienReal" href="'.utf8_decode($link['lien']).'" target="_blank" rel="noopener noreferrer">'.utf8_decode($link['lien']).'</a></td>'?>
+    </tr>
+    <?php }?>
+    <?php 
+    }
+    ?>  
+    
+    
+    <!-- <tr >
+    <td class="platformReal">Epic Game</td>
+    <td colspan="2" class="lienReal"><a href="#" target="_blank">http bidule</a></td>
+    </tr> -->
+
+  </tbody>
+</table>
+
+<?php
+           }
+            ?> #}
+
+{% endblock %}
