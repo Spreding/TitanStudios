@@ -48,7 +48,9 @@
                             </a>
                       <div class="dropdown-content">
 
-        
+        {% for item in highlight %}
+            <a href="{{path('realisations')}}">{{item.title}}</a>
+        {% endfor %}
     {# foreach ($realisationsHighlight as $realisation) 
     {
         echo'<a href="realisations.php#realisation'.$realisation['id'].'">'.$realisation['titre'].'</a>';
