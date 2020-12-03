@@ -1,0 +1,79 @@
+{# Menu de sélection #}
+{# {{dump(position)}} #}
+<div class="stickyAdmin">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+
+    <li class="nav-item" role="presentation">
+    {% if position == 'home' %}
+        <a class="nav-link active stickyAdmin" href="{{path('admin_accueil')}}">Accueil</a>
+    {% else %}
+        <a class="nav-link stickyAdmin" href="{{path('admin_accueil')}}" >Accueil</a>
+    {% endif %}
+  </li>
+
+  <li class="nav-item" role="presentation">
+  {% if position == 'actu' %}
+  <a class="nav-link active stickyAdmin"  href="{{path('admin_actu')}}">Actualités</a> 
+  {% else %}
+  <a class="nav-link stickyAdmin" href="{{path('admin_actu')}}">Actualités</a> 
+       {% endif %}
+  
+    
+  </li>
+
+  <li class="nav-item" role="presentation">
+  {% if position == 'real' %} 
+    <a class="nav-link active stickyAdmin" href="{{path('admin_real')}}">Réalisations</a>
+  
+  {% else %}
+    <a class="nav-link stickyAdmin" href="{{path('admin_real')}}">Réalisations</a>
+
+       {% endif %}
+  </li>
+
+  <li class="nav-item" role="presentation">
+  {% if position == 'equipe' %} 
+    <a class="nav-link active stickyAdmin" href="{{path('admin_equipe')}}">Équipe</a>
+  
+  {% else %}
+    <a class="nav-link stickyAdmin"href="{{path('admin_equipe')}}">Équipe</a>
+
+       {% endif %}
+  </li>
+
+  <li class="nav-item" role="presentation">
+  {% if position == 'categorie' %} 
+    <a class="nav-link active stickyAdmin" href="{{path('admin_categorie')}}">Catégorie</a>
+  
+  {% else %}
+    <a class="nav-link stickyAdmin"href="{{path('admin_categorie')}}">Catégorie</a>
+
+       {% endif %}
+  </li>
+  
+  <li class="nav-item" role="presentation">
+  {% if position == 'type' %}
+    <a class="nav-link active stickyAdmin" href="{{path('admin_type')}}">Type</a>
+  
+   {% else %}
+    <a class="nav-link stickyAdmin" href="{{path('admin_type')}}">Type</a>
+
+       {% endif %}
+  </li>
+
+  <li class="nav-item" role="presentation">
+  {% if position == 'access' %}
+    <a class="nav-link active stickyAdmin" href="{{path('admin_access')}}" role="tab" >Identifiants Admin</a>
+  
+   {% else %}
+    <a class="nav-link stickyAdmin" href="{{path('admin_access')}}" role="tab">Identifiants Admin</a>
+
+       {% endif %}
+  </li>
+
+
+  <li class="Right">
+  <a href="{{path('app_logout')}}" class="btnQuit"><button type="button" class="btn btn-danger" >Quitter</button></a>
+  </li>
+</ul>
+</div>

@@ -1,0 +1,37 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Administration-Equipe{% endblock %}
+
+{% block header %}{% include "admin/header.html.twig" %}{% endblock %}
+
+{% block body %}
+
+  <table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">nom</th>
+      <th scope="col">prenom</th>
+      <th scope="col">rôle</th>
+      <th scope="col">description</th>
+      <th scope="col">image</th>
+      <th scope="col"><a href="{{path('admin_add_equipe')}}"><button type="button" class="btn btn-success" >add</button></a></th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for equipe in Equipes %}
+    <tr class="borderTop">
+      <th scope="row">{{equipe.id}}</th>
+      <td>{{equipe.name}}</td>
+      <td>{{equipe.lastname}}</td>
+      <td>{{equipe.role}}</td>
+      <td>{{equipe.description}}</td>
+      <td>{{equipe.image}} <br> <img src="\uploads\{{equipe.image}}" class="img-fluid img-show"></td>
+      <td><a href='<?php echo 'index.php?id='. $staff['id'].'&action=modify&type=staff'; ?>'><button type="button" class="btn btn-warning" >modif</button></a><a href="<?php echo 'index.php?id='. $staff['id'].'&action=delete&type=staff'; ?>"><button type="button" class="btn btn-danger" >suppr</button></a></td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+{% endblock %}

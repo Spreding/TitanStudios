@@ -19,22 +19,25 @@
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
         
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/script.js"></script>
+        <link rel="stylesheet" href="{{asset('assets/css/styleAdmin.css')}}">
+        <script src="{{asset('assets/js/scriptAdmin.js')}}"></script>
     </head>
     
 
     <body>
-
+        {# Header #}
+            {% block header %}
+                
+            {% endblock %}
         
         {# Body #}
 
-        <div class="container site">
+        {# <div class="container site"> #}
             {% block body %}
                 
             {% endblock %}
 
-        </div>
+        {# </div> #}
         
         
 
