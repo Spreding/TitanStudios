@@ -73,4 +73,9 @@ class LinksRealisation
 
         return $this;
     }
+
+    public function __toString()
+    {
+        return $this->getNameLink().'+'.$this->getLink();
+    }
 }

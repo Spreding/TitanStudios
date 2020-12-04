@@ -21,11 +21,10 @@
       <th scope="col">imageSecondaire2</th>
       <th scope="col">imageSecondaire3</th>
       <th scope="col">highlight</th>
-      <th scope="col"><a href="{{path('admin_add_real')}}"><button type="button" class="btn btn-success" >add</button></a></th>
     </tr>
   </thead>
   <tbody>
-  {% for real in Reals %}
+  {# {% for real in Reals %} #}
     <tr class="borderTop">
       <th scope="row">{{real.id}}</th>
       <td>{{real.categorie}}</td>
@@ -39,23 +38,25 @@
       <td>{{real.image3}} <br> <img src="\uploads\{{real.image3}}" class="img-fluid img-show"></td>
       <td>{{real.image4}} <br> <img src="\uploads\{{real.image4}}" class="img-fluid img-show"></td>
       <td>{% if real.highlight %}Oui{% else %}Non{% endif %}</td>
-      <td rowspan="2"><a href="{{path('admin_modif_real',{id:real.id})}}"><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_real', {id: actu.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
     </tr>
 
 <tr>
 <th scope="row">Liens</th>
-    {% for link in Links %}
   
     {% if link.realisation == real %}
         <td >{{link.nameLink}}</td>
         <td ><a href="{{link.link}}">{{link.link}}</a></td>
     {% endif %}
 
-  {% endfor %}
   </tr>
 
-  {% endfor %}
 
   </tbody>
 </table>
+
+<div class="container site">
+<hr>
+  <h2 class="TitleDelete">Etes vous sur de vouloir supprimer cette réalisation?</h2>
+  {{form(form)}}
+</div>
 {% endblock %}

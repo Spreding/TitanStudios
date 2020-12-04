@@ -34,7 +34,7 @@ class AdminAddController extends AbstractController
     }
 
     /**
-     * @Route("/admin/Actualité/Ajout", name="admin_add_actu")
+     * @Route("/admin/Actualite/Ajout", name="admin_add_actu")
      */
     public function addActu(Request $request): Response
     {
@@ -86,7 +86,7 @@ class AdminAddController extends AbstractController
     }
 
     /**
-     * @Route("/admin/Réalisations/Ajout", name="admin_add_real")
+     * @Route("/admin/Realisation/Ajout", name="admin_add_real")
      */
     public function addReal(Request $request): Response
     {
@@ -218,7 +218,7 @@ class AdminAddController extends AbstractController
     }
 
     /**
-     * @Route("/admin/Équipe/Ajout", name="admin_add_equipe")
+     * @Route("/admin/Equipe/Ajout", name="admin_add_equipe")
      */
     public function addEquipe(Request $request): Response
     {

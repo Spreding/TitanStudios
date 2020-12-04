@@ -42,6 +42,8 @@ class CompanyMembersType extends AbstractType
             ])
             ->add('image', FileType::class,[
                 'label' => 'Image (png/jpg)',
+                'required' =>false,
+                'mapped' => false,
                 'attr' => [
                     
                 ],

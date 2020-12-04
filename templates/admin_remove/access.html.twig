@@ -11,18 +11,20 @@
       <th scope="col">Id</th>
       <th scope="col">nom</th>
       <th scope="col">mot de passe</th>
-      <th scope="col"><a href="{{path('admin_add_access')}}"><button type="button" class="btn btn-success" >add</button></a></th>
     </tr>
   </thead>
   <tbody>
-  {% for access in AdminAccess %}
     <tr class="borderTop">
       <th scope="row">{{access.id}}</th>
       <td>{{access.username}}</td>
       <td>{{access.password}}</td>
-      <td><a href='{{path('admin_modif_access',{id:access.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_access', {id: actu.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
     </tr>
-  {% endfor %}
   </tbody>
 </table>
+
+<div class="container site">
+<hr>
+  <h2 class="TitleDelete">Etes vous sur de vouloir supprimer cet administrateur?</h2>
+  {{form(form)}}
+</div>
 {% endblock %}

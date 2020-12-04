@@ -46,6 +46,8 @@ class ActualiteType extends AbstractType
             ])
             ->add('image', FileType::class,[
                 'label' => 'image de votre actualité (png)',
+                'required' =>false,
+                'mapped' => false,
                 'attr' => [
                     
                 ],

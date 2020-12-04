@@ -52,6 +52,8 @@ class RealisationsType extends AbstractType
             ])
             ->add('image1', FileType::class,[
                 'label' => 'image 1 de la réalisation (png)',
+                'required' =>false,
+                'mapped' => false,
                 'attr' => [
                     
                 ],
@@ -69,6 +71,8 @@ class RealisationsType extends AbstractType
             ])
             ->add('image2', FileType::class,[
                 'label' => 'image 2 de la réalisation (png)',
+                'required' =>false,
+                'mapped' => false,
                 'attr' => [
                     
                 ],
@@ -86,6 +90,8 @@ class RealisationsType extends AbstractType
             ])
             ->add('image3', FileType::class,[
                 'label' => 'image 3 de la réalisation (png)',
+                'required' =>false,
+                'mapped' => false,
                 'attr' => [
                     
                 ],
@@ -103,6 +109,8 @@ class RealisationsType extends AbstractType
             ])
             ->add('image4', FileType::class,[
                 'label' => 'image 4 de la réalisation (png)',
+                'required' =>false,
+                'mapped' => false,
                 'attr' => [
                     
                 ],
