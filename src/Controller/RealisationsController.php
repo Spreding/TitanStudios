@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\LinksRealisation;
 use App\Entity\Realisations;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -23,9 +24,12 @@ class RealisationsController extends AbstractController
     public function index(): Response
     { 
         $realisationsHighlight = $this->entityManager->getRepository(Realisations::class)->findRealisationsHighlighted();
+        $realisations = $this->entityManager->getRepository(Realisations::class)->findBy([], ['id' => 'DESC']);
+        
 
         return $this->render('realisations/index.html.twig', [
             'highlight' => $realisationsHighlight,
+            'reals' => $realisations,
         ]);
     }
 
@@ -35,9 +39,16 @@ class RealisationsController extends AbstractController
     public function realiation($slug): Response
     {
         $realisationsHighlight = $this->entityManager->getRepository(Realisations::class)->findRealisationsHighlighted();
+        $realisation = $this->entityManager->getRepository(Realisations::class)->findOneBySlug($slug);
+        if(!$realisation){
+            return $this->redirectToRoute('realisations');
+        }
+        $links = $this->entityManager->getRepository(LinksRealisation::class)->findByRealisation($realisation);
 
-        return $this->render('realisations/realiastion.html.twig',[
+        return $this->render('realisations/realisation.html.twig',[
             'highlight' => $realisationsHighlight,
+            'real' => $realisation,
+            'links' => $links,
         ]);
     }
 }

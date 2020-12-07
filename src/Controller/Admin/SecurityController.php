@@ -2,6 +2,8 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\AdminUser;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -9,11 +11,24 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
+    private $entityManager;
+
+    public function __construct(EntityManagerInterface $entityManager)
+    {
+        $this->entityManager = $entityManager;
+    }
+
     /**
      * @Route("/admin", name="admin")
      */
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
+         $isadmin = $this->entityManager->getRepository(AdminUser::class)->findAll();
+
+        if(count($isadmin) == 0){
+            return $this->redirectToRoute('admin_accueil');
+        }
+
         if ($this->getUser()) {
             return $this->redirectToRoute('admin_accueil');
         }

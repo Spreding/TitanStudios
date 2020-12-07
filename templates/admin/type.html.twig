@@ -18,7 +18,7 @@
     <tr class="borderTop">
       <th scope="row">{{type.id}}</th>
       <td>{{type.type}}</td>
-      <td><a href='{{path('admin_modif_type',{id:type.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_type', {id: actu.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
+      <td><a href='{{path('admin_modif_type',{id:type.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_type', {id: type.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
     </tr>
   {% endfor %}
   </tbody>

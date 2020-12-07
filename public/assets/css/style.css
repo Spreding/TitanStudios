@@ -151,6 +151,7 @@ div.article img {
     margin: auto;
     /* width: 100%;
     height: auto; */
+    height: 150px;
     max-height: 150px;
 }
 
@@ -261,7 +262,7 @@ div.card {
 
 @media (max-width: 991px) {
     .realisation {
-        height: 350px;
+        height: 400px;
         margin-bottom: 50px;
     }
     .txt-realisation {
@@ -276,6 +277,7 @@ div.card {
         margin-left: 50%;
         margin-top: 50%;
         transform: translateX(-50%);
+        background-color: #aaa;
     }
     .isModal>.carousel-item>img {
         height: 150px;
@@ -308,6 +310,7 @@ div.card {
         margin-left: 50%;
         margin-top: 25%;
         transform: translateX(-50%);
+        background-color: #aaa;
     }
     .isModal>.carousel-item>img {
         /* height: 300px; */

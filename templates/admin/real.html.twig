@@ -39,7 +39,7 @@
       <td>{{real.image3}} <br> <img src="\uploads\{{real.image3}}" class="img-fluid img-show"></td>
       <td>{{real.image4}} <br> <img src="\uploads\{{real.image4}}" class="img-fluid img-show"></td>
       <td>{% if real.highlight %}Oui{% else %}Non{% endif %}</td>
-      <td rowspan="2"><a href="{{path('admin_modif_real',{id:real.id})}}"><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_real', {id: actu.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
+      <td rowspan="2"><a href="{{path('admin_modif_real',{id:real.id})}}"><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_real', {id: real.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
     </tr>
 
 <tr>

@@ -18,7 +18,7 @@
     <tr class="borderTop">
       <th scope="row">{{cate.id}}</th>
       <td>{{cate.categorie}}</td>
-      <td><a href='{{path('admin_modif_categorie',{id:cate.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_categorie', {id: actu.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
+      <td><a href='{{path('admin_modif_categorie',{id:cate.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_categorie', {id: cate.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
     </tr>
   {% endfor %}
   </tbody>

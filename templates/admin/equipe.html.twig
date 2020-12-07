@@ -27,7 +27,7 @@
       <td>{{equipe.role}}</td>
       <td>{{equipe.description}}</td>
       <td>{{equipe.image}} <br> <img src="\uploads\{{equipe.image}}" class="img-fluid img-show"></td>
-      <td><a href='{{path('admin_modif_equipe',{id:equipe.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_equipe', {id: actu.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
+      <td><a href='{{path('admin_modif_equipe',{id:equipe.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_equipe', {id: equipe.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
     </tr>
   {% endfor %}
 

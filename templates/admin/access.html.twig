@@ -5,6 +5,14 @@
 {% block header %}{% include "admin/header.html.twig" %}{% endblock %}
 
 {% block body %}
+{% for message in app.flashes('notice') %}
+    <div class="alert alert-danger alert-dismissible fade show mb-0" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
 <table class="table">
   <thead class="thead-dark">
     <tr>
@@ -20,7 +28,7 @@
       <th scope="row">{{access.id}}</th>
       <td>{{access.username}}</td>
       <td>{{access.password}}</td>
-      <td><a href='{{path('admin_modif_access',{id:access.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_access', {id: actu.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
+      <td><a href='{{path('admin_modif_access',{id:access.id})}}'><button type="button" class="btn btn-warning" >modif</button></a><a href="{{path('admin_suppr_access', {id: access.id})}}"><button type="button" class="btn btn-danger" >suppr</button></a></td>
     </tr>
   {% endfor %}
   </tbody>

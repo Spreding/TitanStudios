@@ -41,6 +41,9 @@ class AdminModifyController extends AbstractController
     public function modifActu(Request $request, $id): Response
     {
         $ActuRef = $this->entityManager->getRepository(Actualite::class)->findOneById($id);
+        if(!$ActuRef){
+            return $this->redirectToRoute('admin_actu');
+        }
         $form = $this->createForm(ActualiteType::class, $ActuRef);
         $form->handleRequest($request);
 
@@ -90,6 +93,9 @@ class AdminModifyController extends AbstractController
     public function modifReal(Request $request, $id): Response
     {
         $RealRef = $this->entityManager->getRepository(Realisations::class)->findOneById($id);
+        if(!$RealRef){
+            return $this->redirectToRoute('admin_real');
+        }
         $links = $this->entityManager->getRepository(LinksRealisation::class)->findByRealisation($RealRef->getId());
 
         $form = $this->createForm(RealisationsType::class, $RealRef);
@@ -171,6 +177,9 @@ class AdminModifyController extends AbstractController
     public function modifType(Request $request, $id): Response
     {
         $TypeRef = $this->entityManager->getRepository(Types::class)->findOneById($id);
+        if(!$TypeRef){
+            return $this->redirectToRoute('admin_type');
+        }
         $form = $this->createForm(TypesType::class, $TypeRef);
         $form->handleRequest($request);
 
@@ -193,6 +202,9 @@ class AdminModifyController extends AbstractController
     public function modifCategorie(Request $request, $id): Response
     {
         $CategorieRef = $this->entityManager->getRepository(Categories::class)->findOneById($id);
+        if(!$CategorieRef){
+            return $this->redirectToRoute('admin_categorie');
+        }
         $form = $this->createForm(CategoriesType::class, $CategorieRef);
         $form->handleRequest($request);
 
@@ -216,6 +228,9 @@ class AdminModifyController extends AbstractController
     public function modifEquipe(Request $request, $id): Response
     {
         $EquipeRef = $this->entityManager->getRepository(CompanyMembers::class)->findOneById($id);
+        if(!$EquipeRef){
+            return $this->redirectToRoute('admin_equipe');
+        }
         $form = $this->createForm(CompanyMembersType::class, $EquipeRef);
         $form->handleRequest($request);
 
@@ -262,6 +277,9 @@ class AdminModifyController extends AbstractController
     public function modifAccess(Request $request, UserPasswordEncoderInterface $encoder, $id): Response
     {
         $AccessRef = $this->entityManager->getRepository(AdminUser::class)->findOneById($id);
+        if(!$AccessRef){
+            return $this->redirectToRoute('admin_access');
+        }
         $form = $this->createForm(AccessAdminType::class, $AccessRef);
         $form->handleRequest($request);
 

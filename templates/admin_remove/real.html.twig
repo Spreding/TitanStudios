@@ -42,11 +42,14 @@
 
 <tr>
 <th scope="row">Liens</th>
+  {% for link in links %}
+    
   
     {% if link.realisation == real %}
         <td >{{link.nameLink}}</td>
         <td ><a href="{{link.link}}">{{link.link}}</a></td>
     {% endif %}
+    {% endfor %}
 
   </tr>
 

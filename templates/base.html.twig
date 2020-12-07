@@ -18,9 +18,9 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-        
-        <link rel="stylesheet" href="assets/css/style.css">
-        <script src="assets/js/script.js"></script>
+        {# assets/css/style.css #}
+        <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+        <script src="{{asset('assets/js/script.js')}}"></script>
     </head>
     
 
@@ -30,7 +30,7 @@
         <header>
     <nav class="navHeader navbar navbar-expand-md navbar-light">
     
-    <a href="{{path("home")}}"><img src="assets/img/Logos_minimalistes_blanc.png" class="logo"/></a>
+    <a href="{{path("home")}}"><img src="{{asset('assets/img/Logos_minimalistes_blanc.png')}}" class="logo"/></a>
     
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -51,7 +51,7 @@
         {% if highlight is defined %}
 
             {% for item in highlight %}
-                <a href="{{path('realisations')}}">{{item.title}}</a>
+                <a href="{{path('realisations')}}#realisation{{item.id}}">{{item.title}}</a>
             {% endfor %}
 
         {% endif %}
@@ -96,7 +96,7 @@
 
 <div class="container">
     <div class="logoFootDiv">
-        <div class=""> <img src="assets/img/Logos_minimalistes_blanc.png" class="logoFoot "/></div>
+        <div class=""> <img src="{{asset('assets/img/Logos_minimalistes_blanc.png')}}" class="logoFoot "/></div>
         <!-- <div class="offset-2 col-1"><img src="images/Classic_marvel_Titan.png" class="logoFootTitan "/></div> -->
     </div>
 

@@ -3,6 +3,12 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Actualite;
+use App\Entity\AdminUser;
+use App\Entity\Categories;
+use App\Entity\CompanyMembers;
+use App\Entity\LinksRealisation;
+use App\Entity\Realisations;
+use App\Entity\Types;
 use App\Form\DeleteEntityAdminType;
 use Doctrine\ORM\EntityManagerInterface;
 use PhpParser\Node\Scalar\MagicConst\File;
@@ -66,75 +72,39 @@ class AdminRemoveController extends AbstractController
         $RealRef = $this->entityManager->getRepository(Realisations::class)->findOneById($id);
         $links = $this->entityManager->getRepository(LinksRealisation::class)->findByRealisation($RealRef->getId());
 
-        $form = $this->createForm(DeleteEntityAdminType::class);
-        for ($i=1; $i <5; $i++) { 
-           $form->get('linkName'.$i)->setData($links[$i-1]->getNameLink());
-           $form->get('link'.$i)->setData($links[$i-1]->getLink());
+        if(!$RealRef){
+            return $this->redirectToRoute('admin_real');
         }
+
+        $form = $this->createForm(DeleteEntityAdminType::class);
+        // for ($i=1; $i <5; $i++) { 
+        //    $form->get('linkName'.$i)->setData($links[$i-1]->getNameLink());
+        //    $form->get('link'.$i)->setData($links[$i-1]->getLink());
+        // }
 
         $form->handleRequest($request);
         
         if($form->isSubmitted() && $form->isValid()){
 
-            $Real = $form->getData();
+           
+            if($form->get('checkBox')->getdata()){
 
-            //Set slug
-            $Real->setSlug(Slugify::Slug($Real->getTitle()));
-
-            //Set les images
-            for ($i=1; $i < 5; $i++) { 
-
-                $imgFile = $form->get('image'.$i)->getData();
-                // dd($imgFile);
-
-                if($imgFile != null){
-                    $filename = pathinfo($imgFile->getClientOriginalName(), PATHINFO_FILENAME);
-    
-                    $newFilename = $filename.'-'.uniqid().'.'.$imgFile->guessExtension();
-                    try {
-                        $imgFile->move(
-                            $this->getParameter('uploads_directory'),
-                            $newFilename
-                        );
-                    } catch (FileException $e) {
-                        // ... handle exception if something happens during file upload
-                        throw new Exception("Erreur lors de l'upload de l'image", 1);
-                        
-                    }
-                    switch($i){
-                        case 1:
-                            $RealRef->setImage1($newFilename);
-                        break;
-                        case 2:
-                            $RealRef->setImage2($newFilename);
-                        break;
-                        case 3:
-                            $RealRef->setImage3($newFilename);
-                        break;
-                        case 4:
-                            $RealRef->setImage4($newFilename);
-                        break;
-                    }
+                $this->entityManager->remove($RealRef);
+                foreach ($links as $link) {
+                    $this->entityManager->remove($link);
                 }
                 
-                
+                $this->entityManager->flush();
+
+                return $this->redirectToRoute("admin_real");
             }
 
-            //Update Liens de réalisations
-            for ($i=1; $i <5; $i++) { 
-                $ln = $form->get('linkName'.$i)->getData();
-                $l = $form->get('link'.$i)->getData();
-                if($links[$i-1]->getNameLink() != $ln) $links[$i-1]->setNameLink($ln);
-                if($links[$i-1]->getLink() != $l) $links[$i-1]->setLink($l);
-             }
-
-             $this->entityManager->flush();
-
-            return $this->redirectToRoute("admin_real");
         }
 
-        return $this->render('admin_modify/index.html.twig', [
+        return $this->render('admin_remove/real.html.twig', [
             'position' => 'real',
+            'real' => $RealRef,
+            'links' => $links,
             'form' => $form->createView(),
         ]);
     }
@@ -145,18 +115,26 @@ class AdminRemoveController extends AbstractController
     public function supprType(Request $request, $id): Response
     {
         $TypeRef = $this->entityManager->getRepository(Types::class)->findOneById($id);
+
+        if(!$TypeRef){
+            return $this->redirectToRoute('admin_type');
+        }
+
         $form = $this->createForm(DeleteEntityAdminType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $type = $form->getData();
+            if($form->get('checkBox')->getdata()){
 
-            $this->entityManager->flush();
+                $this->entityManager->remove($TypeRef);
+                $this->entityManager->flush();
 
-            return $this->redirectToRoute("admin_type");
+                return $this->redirectToRoute("admin_type");
+            }
         }
-        return $this->render('admin_add/index.html.twig', [
+        return $this->render('admin_remove/type.html.twig', [
             'position' => 'type',
+            'type' => $TypeRef,
             'form' => $form->createView(),
         ]);
     }
@@ -167,19 +145,24 @@ class AdminRemoveController extends AbstractController
     public function supprCategorie(Request $request, $id): Response
     {
         $CategorieRef = $this->entityManager->getRepository(Categories::class)->findOneById($id);
+        if(!$CategorieRef){
+            return $this->redirectToRoute('admin_categorie');
+        }
         $form = $this->createForm(DeleteEntityAdminType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $categorie = $form->getData();
+            if($form->get('checkBox')->getdata()){
 
+                $this->entityManager->remove($CategorieRef);
+                $this->entityManager->flush();
 
-            $this->entityManager->flush();
-
-            return $this->redirectToRoute("admin_categorie");
+                return $this->redirectToRoute("admin_categorie");
+            }
         }
-        return $this->render('admin_add/index.html.twig', [
-            'position' => 'type',
+        return $this->render('admin_remove/categorie.html.twig', [
+            'position' => 'categorie',
+            'cate' => $CategorieRef,
             'form' => $form->createView(),
         ]);
     }
@@ -190,33 +173,26 @@ class AdminRemoveController extends AbstractController
     public function supprEquipe(Request $request, $id): Response
     {
         $EquipeRef = $this->entityManager->getRepository(CompanyMembers::class)->findOneById($id);
+        if(!$EquipeRef){
+            return $this->redirectToRoute('admin_equipe');
+        }
         $form = $this->createForm(DeleteEntityAdminType::class);
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-            $equipe = $form->getData();
+            if($form->get('checkBox')->getdata()){
 
-            
-            $imgFile = $form->get('image')->getData();
-            if($imgFile != null){
-                $filename = pathinfo($imgFile->getClientOriginalName(), PATHINFO_FILENAME);
+                $this->entityManager->remove($EquipeRef);
+                $this->entityManager->flush();
 
-                $newFilename = $filename.'-'.uniqid().'.'.$imgFile->guessExtension();
-                // dd($newFilename);
-                
-    
-                $equipe->setImage($newFilename);
+                return $this->redirectToRoute("admin_equipe");
             }
-            
-
-            $this->entityManager->flush();
-
-            return $this->redirectToRoute("admin_equipe");
         }
 
 
-        return $this->render('admin_add/index.html.twig', [
+        return $this->render('admin_remove/equipe.html.twig', [
             'position' => 'equipe',
+            'equipe' => $EquipeRef,
             'form' => $form->createView(),
         ]);
     }
@@ -227,24 +203,38 @@ class AdminRemoveController extends AbstractController
     public function supprAccess(Request $request, $id): Response
     {
         $AccessRef = $this->entityManager->getRepository(AdminUser::class)->findOneById($id);
+        if(!$AccessRef){
+            return $this->redirectToRoute('admin_access');
+        }
+        $nbAdmin = $this->entityManager->getRepository(AdminUser::class)->findAll();
         $form = $this->createForm(DeleteEntityAdminType::class);
         $form->handleRequest($request);
 
-        // $form->get('password')->setData($AccessRef->getPassword());
-        if($form->isSubmitted() && $form->isValid()){
-
-            $access = $form->getData();
-            
-                // $pwd = $encoder->encodePassword($access, $access->getPassword());
-                // $access->setPassword($pwd);
-            
          
-            $this->entityManager->flush();
-
+        if(count($nbAdmin) == 1){
+                $this->addFlash('notice', "Vous ne pouvez pas supprimer le dernier administrateur!")  ;
+                return $this->redirectToRoute("admin_access");
+        }else if($this->getUser() == $AccessRef){
+            $this->addFlash('notice', "Vous ne pouvez pas vous supprimez!")  ;
             return $this->redirectToRoute("admin_access");
         }
-        return $this->render('admin_add/index.html.twig', [
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            if($form->get('checkBox')->getdata()){
+
+                
+
+                $this->entityManager->remove($AccessRef);
+                $this->entityManager->flush();
+
+                
+                
+            }
+        }
+        return $this->render('admin_remove/access.html.twig', [
             'position' => 'access',
+            'access' => $AccessRef,
             'form' => $form->createView(),
         ]);
     }

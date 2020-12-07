@@ -7,32 +7,23 @@
 <p class="presentationTitan">Presentation</p>
             
             <div class="row">
-                
-            
-                {# <?php
-				$statementStaff = $db->query('SELECT * FROM staff');
-                $staffs = $statementStaff->fetchAll();
-                $id = 0;
-                foreach ($staffs as $staff) 
-                {  
-                    $id++;
-                    if($id%2 != 0)
-                    {
-                        echo '<div class="card col-12 col-sm-6 col-md-5">';
-                    }
-                    else
-                    {
-                        echo '<div class="card col-12 col-sm-6 col-md-5 ml-auto presentationBody">';
-                    }
-                    
-                    echo '<img src="images/'.$staff['image'].'" class="card-img-top" alt="...">';
-                    echo'<div class="card-body">';
-                    echo'<h5 class="card-title">'.utf8_decode($staff['nom']).' '.utf8_decode($staff['prenom']).' - '. utf8_decode($staff['role']).'</h5>';
-                    echo'<p class="card-text">'.utf8_decode($staff['description']).'</p>';
-                    echo'</div>
-                        </div>';
-                }
-    ?> #}
+    {% set nbEquipe = 0 %}
+    {% for equipe in equipes %}
+        {% set nbEquipe = nbEquipe+1 %}
+        {% if nbEquipe %2 !=0 %}
+        <div class="card col-12 col-sm-6 col-md-5">
+        {% else %}
+        <div class="card col-12 col-sm-6 col-md-5 ml-auto presentationBody">
+        {% endif %}
+
+        <img src="/uploads/{{equipe.image}}" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">{{equipe.lastName}} {{equipe.name}} - {{equipe.role}}</h5>
+                    <p class="card-text">{{equipe.description}}</p>
+                    </div>
+                        </div>
+        
+    {% endfor %}
             
                 
             </div>

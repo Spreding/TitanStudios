@@ -6,7 +6,7 @@
 <h2 class="sousTitre">ACTUALITÉ</h2>
             <div class="row">
             
-               <div class="containActu col-12 col-md-6">
+               {# <div class="containActu col-12 col-md-6"> #}
              
              
                     
@@ -46,8 +46,26 @@
                     
                 }
    ?> #}
+
+   {% for actu in actus %}
+
+                <div class="containActu col-12 col-md-6 "> 
+                    <a href="{{path('actualite', {slug : actu.slug})}}" class="linkActu">
+                    <div class="Actu"> 
+                        <div class="article row">
+                            <img src="\uploads\{{actu.image}}" class="insideArticle col-5"/>
+                            <div class="col-7">
+                                <h4>{{actu.title}}</h4>
+                                <p class="txtActu">{{actu.description}}</p>
+                            </div>
+                        </div>
+                    </div> 
+                    </a>
+                </div>
+   {% endfor %}
               
             </div>
+            {# </div> #}
             
             {# <?php if($iterationActu > $iterationMax){ ?>
             <button type="button" class="btn btn-primary btn-lg RefreshActu" id="refreshBut" onclick="RefreshActualite()">Voir plus</button>

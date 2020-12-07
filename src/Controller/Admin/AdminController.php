@@ -31,7 +31,12 @@ class AdminController extends AbstractController
      */
     public function home(): Response
     {
-
+        // $isadmin = $this->entityManager->getRepository(AdminUser::class)->findAll();
+        
+        // if(count($isadmin) == 0){
+        //     $this->denyAccessUnlessGranted('IS_ANONYMOUS');
+        // }
+        
 
         return $this->render('admin/menu.html.twig', [
             'position' => 'home'
