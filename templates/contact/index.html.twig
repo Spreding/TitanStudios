@@ -4,8 +4,15 @@
 {% block titleHeader %}Contact{% endblock %}
 
 {% block body %}
-  
-                <h2 >Vous pouvez nous contacter :</h2>
+  {% for message in app.flashes('notice') %}
+    <div class="alert alert-info alert-dismissible fade show mb-0" role="alert">
+  <strong>{{ message }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{% endfor %}
+                <h2 class="mt-3">Vous pouvez nous contacter :</h2>
         <div class="textContact row">
             
 
@@ -23,7 +30,6 @@
                 </ul>
             </ul>
 
-            <!-- <p>D'autres Information?</p> -->
         </div>
 
                 
@@ -31,51 +37,6 @@
            
                <div class="col-lg-12 ">
                <h2>Ou vous pouvez remplir ce formulaire</h2>
-                    {# <form id="contact-form" method="post" action="contact.php" role="form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label for="name">Nom & Prénom <span class="blue">*</span></label>
-                                <input id="name" type="text" name="name" class="form-control" placeholder="Votre Nom et prénom" required>
-                                <p class="comments"><?=$array["nameError"]?></p>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="email">Email <span class="blue">*</span></label>
-                                <input id="email" type="email" name="email" class="form-control" placeholder="Votre Email" required>
-                                <p class="comments"><?=$array["emailError"]?></p>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="company">Société</label>
-                                <input id="company" type="text" name="company" class="form-control" placeholder="Votre société">
-                                <p class="comments"><?=$array["companyError"]?></p>
-                            </div>
-                            <div class="col-md-4">
-                                <label for="phone">Téléphone</label>
-                                <input id="phone" type="tel" name="phone" class="form-control" placeholder="Votre Téléphone">
-                                <p class="comments"><?=$array["phoneError"]?></p>
-                            </div>
-                            <div class="col-md-4">
-                            <label for="category">Catégorie de projet <span class="blue">*</span></label>
-                            <select id="category" name="category" class="form-control">
-                              <option value="plusInfo">Plus d'information</option>
-                              <option value="jeuVideo">Jeu Vidéo</option>
-                              <option value="web">WEB</option>
-                              <option value="application">Application</option>
-                              <option value="autres">Autres</option>
-                            </select>
-                            </div>
-                            <div class="col-md-12">
-                                <label for="message">Message <span class="blue">*</span></label>
-                                <textarea id="message" name="message" class="form-control" placeholder="Votre Message" rows="4" required></textarea>
-                                <p class="comments"><?=$array["messageError"]?></p>
-                            </div>
-                            <div class="col-md-12">
-                                <p class="blue"><strong>* Ces informations sont requises.</strong></p>
-                            </div>
-                            <div class="col-md-12">
-                                <input type="submit" class="btn-lg btn-primary buttonContact" value="Envoyer">
-                            </div>    
-                        </div>
-                    </form> #}
                     {{form_start(form)}}
                         <div class="row">
                             <div class="col-md-4">{{form_row(form.firstname)}}</div>

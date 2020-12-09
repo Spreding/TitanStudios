@@ -6,6 +6,7 @@ use App\Entity\Actualite;
 use App\Entity\Realisations;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -25,18 +26,46 @@ class HomeController extends AbstractController
     {
          $realisationsHighlight = $this->entityManager->getRepository(Realisations::class)->findRealisationsHighlighted();
 
-         $actus = $this->entityManager->getRepository(Actualite::class)->findAll();
-        //  dd($request->query->get('id'));
-        // dd($realisationsHighlight);
+        $nbElemMax = 4;
+        $actusToShow = $this->entityManager->getRepository(Actualite::class)->findBy([], ['id'=>'DESC'], $nbElemMax);
+
+         
+         
+    if ($request->isXmlHttpRequest()){
+        $jsonData =  array();
+
+        $firstactu = $this->entityManager->getRepository(Actualite::class)->findBy([], ['id'=>'ASC'], 1);
+         $search = $request->request->all();
+
+        $offset = $search['data'] * $nbElemMax;
+        $actusToAdd = $this->entityManager->getRepository(Actualite::class)->findBy([], ['id'=>'DESC'], $nbElemMax, $offset);
+
+        $canFetchMore = in_array($firstactu[0], $actusToAdd);
+          for ($i=0; $i < count($actusToAdd); $i++) { 
+            $temp = array(
+                'title' => $actusToAdd[$i]->getTitle(),
+                'description' => $actusToAdd[$i]->getdescription(),
+                'image' => $actusToAdd[$i]->getImage(),
+                'slug' => $actusToAdd[$i]->getSlug(),
+                'last' => $canFetchMore,
+            );
+
+            $jsonData[$i] = $temp;
+          } 
+          
+          
+        return new JsonResponse($jsonData);
+    }
+
         return $this->render('home/index.html.twig',[
             'highlight' => $realisationsHighlight,
-            'actus' => $actus,
+            'actus' => $actusToShow,
         ]);
     }
 
 
     /**
-     * @Route("/actualité/{slug}", name="actualite")
+     * @Route("/actualite/{slug}", name="actualite")
      */
     public function actualite($slug): Response
     {

@@ -5,16 +5,7 @@
 
 
 {% block body %}
- {# <?php
-				$statement = $db->query('SELECT * FROM realisations');
-                $realisations = $statement->fetchAll();
-    
-    foreach ($realisations as $realisation) 
-                {   
-//        echo $realisation['id']. "/" .$realisation['description']."<br />";
-        
-        //Les differentes réalisations id par id
-        echo '<div class="realisation row" id="realisation'.$realisation['id'].'">';
+{# echo '<div class="realisation row" id="realisation'.$realisation['id'].'">';
             echo ' <div class="img-realisation col-12 col-md-6 row" data-toggle="modal" data-target="#Modal'.$realisation['id'].'">';
             echo'<img src="images/'.$realisation['imagePrincipale'].'" class="col-8 img-principal cursorPointer" data-target="#carousel'.$realisation['id'].'" data-slide-to="0"/>';
             echo '<div class="imgSecondaireContenaire col-3" >';
@@ -24,57 +15,7 @@
         echo '</div> </div>';
         echo'<div class="txt-realisation col-12 col-md-6">';
         echo'<div class="titreReal">'.utf8_decode($realisation['titre']).'</div>';
-        echo'<div class="txtReal">'.utf8_decode($realisation['description']).'</div>';
-        echo '<div class="infoReal"> <a href="realisationPage.php?id='.$realisation['id'].'"><button type="button" class="btn btn-primary btnReal" href="realisationPage.php?'.$realisation['id'].'">En savoir plus</button></a> </div> </div> </div>';
-        //Les differents modal d'images id par id
-        echo'<div class="modal fade" id="Modal'.$realisation['id'].'" tabindex="-1" role="dialog" aria-hidden="true">';
-        echo'<div class="modal-dialog" role="document"> <div class="modal-content"> <div class="modal-body">';
-        echo'<div id="carousel'.$realisation['id'].'" class="carousel slide" data-ride="carousel">';
-        echo'<ol class="carousel-indicators">
-            <li data-target="#carousel'.$realisation['id'].'" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel'.$realisation['id'].'" data-slide-to="1"></li>
-            <li data-target="#carousel'.$realisation['id'].'" data-slide-to="2"></li>
-            <li data-target="#carousel'.$realisation['id'].'" data-slide-to="3"></li>
-          </ol>';
-        echo '<div class="carousel-inner isModal">
-            <div class="carousel-item active">
-              <img class="d-block w-100" src="images/'.$realisation['imagePrincipale'].'" alt="First slide" height="250px">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="images/'.$realisation['imageSecondaire1'].'" alt="Second slide" height="250px">
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="images/'.$realisation['imageSecondaire2'].'" alt="Third slide" height="250px" >
-            </div>
-            <div class="carousel-item">
-              <img class="d-block w-100" src="images/'.$realisation['imageSecondaire3'].'" alt="Fourth slide" height="250px">
-            </div>
-          </div>';
-        echo '<a class="carousel-control-prev" href="#carousel'.$realisation['id'].'" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carousel'.$realisation['id'].'" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>';
-        echo '</div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-            </div>
-            </div>';
-        
-        
-        
-        
-        
-        
-                }
-    Database::disconnect();
-                ?> #}
+        echo'<div class="txtReal">'.utf8_decode($realisation['description']).'</div>'; #}
                 {% set iteration = 0 %}
                 {% for real in reals %}
                   {% set iteration = iteration +1 %}
@@ -87,6 +28,7 @@
                 <div class="realisation row" id="realisation{{real.id}}">
                   <div class="img-realisation col-12 col-md-6 row" data-toggle="modal" data-target="#Modal{{real.id}}">
                     <img src="/uploads/{{real.image1}}" class="col-8 img-principal cursorPointer" data-target="#carousel{{real.id}}" data-slide-to="0"/>
+
                     <div class="imgSecondaireContenaire col-3" >
                       <img src="/uploads/{{real.image2}}" class="img-secondaire img-top cursorPointer" data-target="#carousel{{real.id}}" data-slide-to="1">
                       <img src="/uploads/{{real.image3}}" class="img-secondaire img-mid cursorPointer" data-target="#carousel{{real.id}}" data-slide-to="2">

@@ -83,30 +83,3 @@ function SetElementsInvisible2() {
     //    alert("Execute Javascript Code");
     console.log("invisble");
 }
-
-var maxIte = 4;
-
-function RefreshActualite() {
-    console.log("refresh");
-    //    var elem = document.getElementsByClassName("Invisible");
-    //    console.log(elem.length);
-
-    var elem = $(".Invisible");
-    var ite = 0;
-    if (elem.length < maxIte) {
-        ite = elem.length;
-
-    } else {
-        ite = maxIte;
-    }
-
-    elem.slice(0, ite).removeClass("Invisible");
-    var elem2 = elem.slice(ite);
-
-    if (elem2.length == 0) {
-        $("#refreshBut").hide();
-    }
-    //    for (let i = 0; i < 4; i++) {
-    //  elem[i]
-    //}
-}

@@ -3,26 +3,11 @@
 {% block title %}Actualité{% endblock %}
 {% block titleHeader %}Actualité{% endblock %}
 {% block body %}
-{# <?php
-            // echo "1";
-           foreach($actus as $actu)
-           {
-            //    echo "1";
-            echo'<p class="dateActu">Article poster le '.$actu['date'].'</p>';
-            echo'<div class="row">';
-            echo'<img src="images/'.$actu['image'].'" class="imgActu col-12 col-md-8">';
-            echo'</div>';
-            echo'<p class="txtActuPage">'.utf8_decode($actu['texte']).'</p>';
-           }
-            
 
-            ?> #}
-
-           
 
             <p class="dateActu">Article poster le {{actu.createdAt|date("d/m/Y à H:i:s")}}</p>
             <div class="row">
-            <img src="/uploads/{{actu.image}}" class="imgActu col-12 col-md-8">
+            <img src="/uploads/{{actu.image}}" class="imgActu col-12 col-md-7">
             </div>
-            <p class="txtActuPage">{{actu.text}}</p>
+            <div class="txtActuPage"><p>{{actu.text}}<p></div>
 {% endblock %}

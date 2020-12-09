@@ -20,7 +20,7 @@ class ContactType extends AbstractType
     {
         $builder
         ->add('firstname', TextType::class, [
-            'label' => 'Votre prénom',
+            'label' => 'Votre prénom *',
             'constraints' => new Length([
                 'min' => 2,
                 'max' => 40
@@ -30,7 +30,7 @@ class ContactType extends AbstractType
             ]
         ])
         ->add('lastname', TextType::class, [
-            'label' => 'Votre nom',
+            'label' => 'Votre nom *',
             'constraints' => new Length([
                 'min' => 2,
                 'max' => 40
@@ -40,7 +40,7 @@ class ContactType extends AbstractType
             ]
         ])
         ->add('email', EmailType::class, [
-            'label' => 'Votre adresse mail',
+            'label' => 'Votre adresse mail *',
             'constraints' => new Length([
                 'min' => 2,
                 'max' => 60
@@ -51,6 +51,7 @@ class ContactType extends AbstractType
         ])
         ->add('phone', TelType::class, [
             'label' => 'Votre téléphone',
+            'required' =>false,
             'constraints' => new Length([
                 'min' => 10,
                 'max' => 10
@@ -73,7 +74,7 @@ class ContactType extends AbstractType
             ]
         ])
         ->add('texte', TextAreaType::class, [
-            'label' => 'Votre message',
+            'label' => 'Votre message *',
             'attr' => [
                 'placeholder' => 'Veuillez rentrer votre message'
             ]

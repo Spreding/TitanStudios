@@ -1,51 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Accueil{% endblock %}
+{% block js %}<script src="{{asset('assets/js/scriptLoadActualite.js')}}"></script>{% endblock %}
 {% block titleHeader %}Accueil{% endblock %}
 {% block body %}
 <h2 class="sousTitre">ACTUALITÉ</h2>
-            <div class="row">
-            
-               {# <div class="containActu col-12 col-md-6"> #}
-             
-             
-                    
-             {# <?php
-				$statementActu = $db->query('SELECT * FROM actualite ORDER BY id DESC');
-                $actualites = $statementActu->fetchAll();
-    
-                $iterationMax = 4;
-                $iterationActu = 0;
-                $iteration = 0;
-    
-
-                foreach($actualites as $actualite)
-                {
-                    $iterationActu++;
-                    if($iterationActu <= $iterationMax)
-                    {
-                        echo'<div class="containActu col-12 col-md-6 "> <a href="ActuPage.php?id='. $actualite['id'] .'" class="linkActu">';
-                    }
-                    else
-                    {
-                        echo'<div class="containActu col-12 col-md-6 Invisible"><a href="ActuPage.php?id='. $actualite['id'] .'" class="linkActu">';
-                    }
-                    echo '<div class="Actu"> 
-                        <div class="article row">';
-                    echo'<img src="images/'.$actualite['image'].'" class="insideArticle col-5"/>';
-                    echo'<div class="col-7">
-                    <h4>'.utf8_decode($actualite['titre']).'</h4>
-                    <p class="txtActu">'.utf8_decode($actualite['description']).'</p>
-                    </div>';
-                    echo'</div>
-                        </div> 
-                        </a>
-                        </div>';
-                    
-
-                    
-                }
-   ?> #}
+            <div class="row" id="actuContainer">
 
    {% for actu in actus %}
 
@@ -67,7 +27,7 @@
             </div>
             {# </div> #}
             
-            {# <?php if($iterationActu > $iterationMax){ ?>
-            <button type="button" class="btn btn-primary btn-lg RefreshActu" id="refreshBut" onclick="RefreshActualite()">Voir plus</button>
-         <?php }?> #}
+            {# <?php if($iterationActu > $iterationMax){ ?> #}
+            <button type="button" class="btn btn-primary btn-lg RefreshActu" id="refreshBut">Voir plus</button>
+         {# <?php }?> #}
 {% endblock %}
