@@ -18,7 +18,7 @@
 
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-        {# assets/css/style.css #}
+
         <link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
         <script src="{{asset('assets/js/script.js')}}"></script>
         {% block js %}{% endblock %}
@@ -51,16 +51,17 @@
 
         {% if highlight is defined %}
 
-            {% for item in highlight %}
-                <a href="{{path('realisations')}}#realisation{{item.id}}">{{item.title}}</a>
+            {% for key,item in highlight %}
+                    {% if key == 0 %}
+                        <a href="{{path('realisations')}}#realisation{{item.id}}" >{{item.title}}</a>
+                    {% else %}
+                        <a href="{{path('realisations')}}#realisation{{item.id}}" class="borderedTop">{{item.title}}</a>
+                    {% endif %}
+                    
+                
             {% endfor %}
 
         {% endif %}
-    {# foreach ($realisationsHighlight as $realisation) 
-    {
-        echo'<a href="realisations.php#realisation'.$realisation['id'].'">'.$realisation['titre'].'</a>';
-    } #}
-
 </div>
                     </div>
                 </li>

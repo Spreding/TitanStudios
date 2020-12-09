@@ -304,7 +304,7 @@ div.card {
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .realisation {
         height: 250px;
         margin-bottom: 50px;
@@ -321,8 +321,41 @@ div.card {
         height: 150px;
     } */
     .modal-content {
-        width: 900px;
+        width: 720px;
         height: 600px;
+        margin-left: 50%;
+        margin-top: 25%;
+        transform: translateX(-50%);
+    }
+    .isModal>.carousel-item>img {
+        /* height: 300px; */
+        height: 500px;
+    }
+    .img-principal {
+        /* height: 250px; */
+        max-height: 250px;
+    }
+}
+
+@media (min-width: 992px) {
+    .realisation {
+        height: 250px;
+        margin-bottom: 50px;
+    }
+    .txt-realisation {
+        overflow: hidden;
+        height: 250px;
+        padding-left: 35px;
+    }
+    /* .txt-realisation>p {
+         position: absolute;
+        top: 50%;
+        transform: translateY(-50%); 
+        height: 150px;
+    } */
+    .modal-content {
+        width: 960px;
+        height: 700px;
         margin-left: 50%;
         margin-top: 25%;
         transform: translateX(-50%);
@@ -793,6 +826,10 @@ div.card {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+}
+
+.borderedTop {
+    border-top: 2px solid #007bff;
 }
 
 .dropdown-content a:hover {

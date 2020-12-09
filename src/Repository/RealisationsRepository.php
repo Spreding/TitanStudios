@@ -28,7 +28,7 @@ class RealisationsRepository extends ServiceEntityRepository
         $query = $this->createQueryBuilder('r')
             ->Where('r.highlight = :val')
             ->setParameter('val', true)
-            ->orderBy('r.id', 'ASC')
+            ->orderBy('r.id', 'DESC')
         ;
 
         return $query->getQuery()->getResult();
