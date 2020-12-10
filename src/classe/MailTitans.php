@@ -4,7 +4,7 @@ namespace App\classe;
 
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
-const TitanMail = 'stud.titan@gmail.com';//'stud.titan@gmail.com';
+const TitanMail = 'mathieu.cros2@gmail.com';//'stud.titan@gmail.com';
 const SubjectToTitan = 'Un Mail de votre site';
 
 Class MailTitans{
@@ -19,8 +19,8 @@ Class MailTitans{
     public function sendMailToUser(string $clientName , string $subject , string $fromMail){
 
         $email = (new TemplatedEmail())
-        ->from($fromMail)
-        ->to(TitanMail)
+        ->from(TitanMail)
+        ->to($fromMail)
         ->subject($subject)
         ->htmlTemplate('mail/mailToClient.html.twig')
         ->context([
