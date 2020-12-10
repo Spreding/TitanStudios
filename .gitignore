@@ -7,7 +7,10 @@
 /public/bundles/
 /var/
 /vendor/
-public/uploads
+#public/uploads/*.png
+#public/uploads/*.jpeg
+public/uploads/*
+!public/uploads/.gitkeep 
 ###< symfony/framework-bundle ###
 
 ###> symfony/phpunit-bridge ###
