@@ -13,6 +13,7 @@ use App\Form\DeleteEntityAdminType;
 use Doctrine\ORM\EntityManagerInterface;
 use PhpParser\Node\Scalar\MagicConst\File;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -45,11 +46,19 @@ class AdminRemoveController extends AbstractController
             $Actu = $form->getData();
             // dd($form->get('checkBox')->getdata());
             if($form->get('checkBox')->getdata()){
+                $filesystem = new Filesystem();
+                // dd('public/uploads/'.$ActuRef->getImage());
+            // dd();
+            if($filesystem->exists('uploads/'.$ActuRef->getImage())){
+                $filesystem->remove(['uploads/'.$ActuRef->getImage()]);
+                
+            }
+            $this->entityManager->remove($ActuRef);
+            $this->entityManager->flush();
 
-                $this->entityManager->remove($ActuRef);
-                $this->entityManager->flush();
+            return $this->redirectToRoute("admin_actu");
 
-                return $this->redirectToRoute("admin_actu");
+                
             }
             
 
@@ -77,10 +86,6 @@ class AdminRemoveController extends AbstractController
         }
 
         $form = $this->createForm(DeleteEntityAdminType::class);
-        // for ($i=1; $i <5; $i++) { 
-        //    $form->get('linkName'.$i)->setData($links[$i-1]->getNameLink());
-        //    $form->get('link'.$i)->setData($links[$i-1]->getLink());
-        // }
 
         $form->handleRequest($request);
         
@@ -89,6 +94,22 @@ class AdminRemoveController extends AbstractController
            
             if($form->get('checkBox')->getdata()){
 
+                $filesystem = new Filesystem();
+                
+                    if($filesystem->exists('uploads/'.$RealRef->getImage1())){
+                        $filesystem->remove(['uploads/'.$RealRef->getImage1()]); 
+                    }
+                    if($filesystem->exists('uploads/'.$RealRef->getImage2())){
+                        $filesystem->remove(['uploads/'.$RealRef->getImage2()]); 
+                    }
+                    if($filesystem->exists('uploads/'.$RealRef->getImage3())){
+                        $filesystem->remove(['uploads/'.$RealRef->getImage3()]); 
+                    }
+                    if($filesystem->exists('uploads/'.$RealRef->getImage4())){
+                        $filesystem->remove(['uploads/'.$RealRef->getImage4()]); 
+                    }
+                
+                
                 $this->entityManager->remove($RealRef);
                 foreach ($links as $link) {
                     $this->entityManager->remove($link);
@@ -181,7 +202,11 @@ class AdminRemoveController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             if($form->get('checkBox')->getdata()){
-
+                $filesystem = new Filesystem();
+                
+                if($filesystem->exists('uploads/'.$EquipeRef->getImage())){
+                    $filesystem->remove(['uploads/'.$EquipeRef->getImage()]); 
+                }
                 $this->entityManager->remove($EquipeRef);
                 $this->entityManager->flush();
 

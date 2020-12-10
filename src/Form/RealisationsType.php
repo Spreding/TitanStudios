@@ -152,6 +152,7 @@ class RealisationsType extends AbstractType
             ->add('linkName1', TextType::class,[
                 'label' => 'Nom du lien 1 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'nom lien 1',
                 ]
@@ -159,6 +160,7 @@ class RealisationsType extends AbstractType
             ->add('link1', TextType::class,[
                 'label' => 'Lien 1 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'lien 1',
                 ]
@@ -166,6 +168,7 @@ class RealisationsType extends AbstractType
             ->add('linkName2', TextType::class,[
                 'label' => 'Nom du lien 2 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'nom lien 2',
                 ]
@@ -173,6 +176,7 @@ class RealisationsType extends AbstractType
             ->add('link2', TextType::class,[
                 'label' => 'Lien 2 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'lien 2',
                 ]
@@ -180,6 +184,7 @@ class RealisationsType extends AbstractType
             ->add('linkName3', TextType::class,[
                 'label' => 'Nom du lien 3 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'nom lien 3',
                 ]
@@ -187,6 +192,7 @@ class RealisationsType extends AbstractType
             ->add('link3', TextType::class,[
                 'label' => 'Lien 3 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'lien 3',
                 ]
@@ -194,6 +200,7 @@ class RealisationsType extends AbstractType
             ->add('linkName4', TextType::class,[
                 'label' => 'Nom du lien 4 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'nomlien 4',
                 ]
@@ -201,6 +208,7 @@ class RealisationsType extends AbstractType
             ->add('link4', TextType::class,[
                 'label' => 'Lien 4 de votre réalisation',
                 'mapped' =>false,
+                'required' => false,
                 'attr' => [
                     'placeholder' => 'lien 4',
                 ]
