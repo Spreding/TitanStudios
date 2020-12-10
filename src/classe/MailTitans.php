@@ -4,7 +4,7 @@ namespace App\classe;
 
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\Mailer\MailerInterface;
-const TitanMail = 'mathieu.cros2@gmail.com';//'stud.titan@gmail.com';
+const TitanMail = 'contact@titanstudios.fr';//'stud.titan@gmail.com';
 const SubjectToTitan = 'Un Mail de votre site';
 
 Class MailTitans{
