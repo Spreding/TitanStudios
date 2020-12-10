@@ -29,7 +29,7 @@ class HomeController extends AbstractController
         $nbElemMax = 4;
         $actusToShow = $this->entityManager->getRepository(Actualite::class)->findBy([], ['id'=>'DESC'], $nbElemMax);
         
-        // dd(count($actusToShow) < $nbElemMax);
+
         $hideBut = (count($actusToShow) < $nbElemMax) ? true : false;
          
          
