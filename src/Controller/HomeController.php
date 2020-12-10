@@ -28,7 +28,8 @@ class HomeController extends AbstractController
 
         $nbElemMax = 4;
         $actusToShow = $this->entityManager->getRepository(Actualite::class)->findBy([], ['id'=>'DESC'], $nbElemMax);
-
+        if(count($actusToShow) < $nbElemMax)
+        $hideBut = (count($actusToShow) < $nbElemMax) ? true : false;
          
          
     if ($request->isXmlHttpRequest()){
@@ -60,6 +61,7 @@ class HomeController extends AbstractController
         return $this->render('home/index.html.twig',[
             'highlight' => $realisationsHighlight,
             'actus' => $actusToShow,
+            'isButHide'=> $hideBut,
         ]);
     }
 

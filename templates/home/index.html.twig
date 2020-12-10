@@ -28,6 +28,8 @@
             {# </div> #}
             
             {# <?php if($iterationActu > $iterationMax){ ?> #}
-            <button type="button" class="btn btn-primary btn-lg RefreshActu" id="refreshBut">Voir plus</button>
+            {% if isButHide == false %} <button type="button" class="btn btn-primary btn-lg RefreshActu" id="refreshBut">Voir plus</button>{% endif %}
+            
+           
          {# <?php }?> #}
 {% endblock %}
