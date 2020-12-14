@@ -1,7 +1,14 @@
 doctrine:
     dbal:
-        url: '%env(resolve:DATABASE_URL)%'
-        database_driver: pdo_mysql
+        #url: '%env(resolve:DATABASE_URL)%'
+        dbname: '%env(DATABASE_NAME)%'
+        host: '%env(DATABASE_HOST)%'
+        port: '%env(DATABASE_PORT)%'
+        user: '%env(DATABASE_USER)%'
+        password: '%env(DATABASE_PWD)%'
+        driver: 'pdo_mysql'
+        charset: utf8mb4
+        server_version: '5.7'
         # database_host: mysql51-115.perso
         # database_port: 3306
         # IMPORTANT: You MUST configure your server version,
