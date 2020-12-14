@@ -46,7 +46,7 @@ class ContactController extends AbstractController
             
 
             //Mail to user
-            $subject = "Merci d'avoir contacter TITANstudios";
+            $subject = "Merci d'avoir contacter TITAN Studios";
 
             $mailTemplate = $email->sendMailToUser($clientName, $subject, $mailClient);
 

@@ -34,11 +34,11 @@ Class MailTitans{
 
     public function sendMailToTitan(string $clientName, string $clientMail, string $cateProjet, string $clientText, $clientPhone){
 
-
+        $subject = 'Un mail de '.$clientName;
         $email = (new TemplatedEmail())
         ->from(TitanMail)
         ->to(TitanMail)
-        ->subject(SubjectToTitan)
+        ->subject($subject)
         ->htmlTemplate('mail/mailToTitans.html.twig')
         ->context([
             'client'=> $clientName,
