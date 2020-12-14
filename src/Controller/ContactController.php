@@ -57,7 +57,7 @@ class ContactController extends AbstractController
 
             $mailer->send($mailTemplate);
 
-            $this->addFlash('notice', 'Votre message à bien été envoyer!');
+            $this->addFlash('notice', 'Votre message à bien été envoyé!');
             $form = $this->createForm(ContactType::class);
             
         }
