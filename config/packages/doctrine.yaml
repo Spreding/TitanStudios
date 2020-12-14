@@ -1,15 +1,25 @@
 doctrine:
     dbal:
-        url: '%env(resolve:DATABASE_URL)%'
-        dbname: '%env(DATABASE_NAME)%'
+        # url: '%env(resolve:DATABASE_URL)%'
+        # dbname: '%env(DATABASE_NAME)%'
+        # host: '%env(DATABASE_HOST)%'
+        # port: '%env(DATABASE_PORT)%'
+        # user: '%env(DATABASE_USER)%'
+        # password: '%env(DATABASE_PWD)%'
+        # driver: 'pdo_mysql'
+        # server_version: '5.7'
+        # unix_socket: /var/lib/mysql/mysql.sock
+        # charset: UTF8
+
+        driver: pdo_mysql
         host: '%env(DATABASE_HOST)%'
         port: '%env(DATABASE_PORT)%'
+        dbname: '%env(DATABASE_NAME)%'
         user: '%env(DATABASE_USER)%'
         password: '%env(DATABASE_PWD)%'
-        driver: 'pdo_mysql'
-        charset: utf8mb4
+        unix_socket: /var/lib/mysql/mysql.sock
         server_version: '5.7'
-        unix_socket: /tmp/mysql.sock
+        charset: UTF8
         # database_host: mysql51-115.perso
         # database_port: 3306
         # IMPORTANT: You MUST configure your server version,
