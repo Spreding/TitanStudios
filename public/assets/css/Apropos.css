@@ -1,0 +1,370 @@
+body{
+    margin: 0;
+    background-color: #12121a;
+}
+
+
+/* 400 ou 600 pour le gr */
+
+.Boldfont{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+.basefont{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.CenterContent{
+    text-align: center;
+}
+
+.NoDecoration{
+    text-decoration: none !important ;
+}
+
+.PicsHolder{
+    width: 100%;
+    margin-top: 50px;
+    float: left;
+   
+}
+
+.Left{
+    width: 50%;
+   float: left;
+    background-color: #12121a;
+ 
+    height: width/2;
+  
+}
+
+.Right{
+    width: 50%;
+    float: right;
+    background-color: #12121a;
+ 
+    height: width/2;
+}
+
+.pp{
+    width: 40%;
+    float: left;
+    margin-left:40%;
+    max-width: 400px;
+   
+}
+
+.pp2{
+    width: 40%;
+    float: right;
+    margin-right: 40%;
+    max-width: 400px;
+}
+
+.Bottom{
+    width: 100%;
+   
+    padding-top: 50px;
+    float: left;
+ 
+}
+
+.VioletSquare{
+    
+    width: 40%;
+    margin-left: 60%;
+    border-style: solid;
+    border-color: #763df2;
+    border-width: 20%;
+    border-radius: 2px;
+    transform: translate(-50%,0);
+margin-top: 100px;
+    padding:20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.VioletSquare2{
+   
+    width: 40%;
+    margin-left: 40%;
+    border-style: solid;
+    border-color: #763df2;
+    border-width: 20%;
+    border-radius: 2px;
+    transform: translate(-50%,0);
+    margin-top: 100px;
+    padding:20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.Webicon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80px;
+    transform: translate(-15%,-60%);
+}
+
+.bottomestbottom{
+    float: left;
+    width: 100%;
+  
+
+}
+
+
+.IconHolder{
+    width: 100%;
+    height: 200px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    
+}
+
+
+.ThrustTitle{
+    font-size: 30px;
+    margin-left: 0%;
+    padding-left: 0%;
+    margin-top: 150px;
+    width: 100%;
+    text-align: center;
+
+}
+
+.box{
+width: 33.3%;
+
+height: 100%;
+text-align: center;
+float: left;
+}
+
+.ThrustIcon{
+    
+    height: 100%;
+    border-radius: 50%;
+    margin-right: 0;
+
+  
+}
+
+.boxShadow{
+    box-shadow: 5px 5px 5px black;
+}
+
+.TransformCenter{
+ 
+    transform: translate(-50%,0);
+}
+
+.titi{
+margin-left: 60%;
+float: left;
+width: 40%;
+padding-top: 20px;
+}
+
+.tango{
+    float: right;
+    width: 40%;
+    margin-right: 20%;
+    padding-top: 20px;
+    margin-left: 0%;
+}
+
+
+/*
+ __      __           _               __  __       _     _ _      
+ \ \    / /          (_)             |  \/  |     | |   (_) |     
+  \ \  / /__ _ __ ___ _  ___  _ __   | \  / | ___ | |__  _| | ___ 
+   \ \/ / _ \ '__/ __| |/ _ \| '_ \  | |\/| |/ _ \| '_ \| | |/ _ \
+    \  /  __/ |  \__ \ | (_) | | | | | |  | | (_) | |_) | | |  __/
+     \/ \___|_|  |___/_|\___/|_| |_| |_|  |_|\___/|_.__/|_|_|\___|
+                                                                                                                               
+                                                                                         
+*/
+
+@media screen and (max-width: 900px) {
+   
+.Boldfont{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+}
+
+.basefont{
+    color: white;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.CenterContent{
+    text-align: center;
+}
+
+.NoDecoration{
+    text-decoration: none !important ;
+}
+
+.PicsHolder{
+    width: 100%;
+    margin-top: 50px;
+    float: left;
+   
+}
+
+.Left{
+    width: 100%;
+   float: left;
+    background-color: #12121a;
+ 
+    height: width/2;
+  
+}
+
+.Right{
+    width: 100%;
+    float: left;
+    background-color: #12121a;
+ 
+    height: width/2;
+}
+
+.pp{
+    width: 70%;
+    float: left;
+    margin-left:15%;
+    max-width: 400px;
+   
+}
+
+.pp2{
+    width: 70%;
+    float: right;
+    margin-right: 15%;
+    max-width: 400px;
+}
+
+.Bottom{
+    width: 100%;
+   
+    padding-top: 0px;
+    float: left;
+ 
+}
+
+.VioletSquare{
+    
+    width: 80%;
+    margin-left: 50%;
+    border-style: solid;
+    border-color: #763df2;
+    border-width: 20%;
+    border-radius: 2px;
+    transform: translate(-50%,0);
+    margin-top: 100px;
+    padding:20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.VioletSquare2{
+   
+    width: 80%;
+    margin-left: 50%;
+    border-style: solid;
+    border-color: #763df2;
+    border-width: 20%;
+    border-radius: 2px;
+    transform: translate(-50%,0);
+    margin-top: 100px;
+    padding:20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.Webicon{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 80px;
+    transform: translate(-15%,-60%);
+}
+
+.bottomestbottom{
+    float: left;
+    width: 100%;
+  
+
+}
+
+.IconHolder{
+    width: 100%;
+    height: 100px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    
+}
+
+
+.ThrustTitle{
+    font-size: 30px;
+    margin-left: 0%;
+    padding-left: 0%;
+    margin-top: 50px;
+
+}
+
+.box{
+width: 33.3%;
+
+height: 100%;
+text-align: center;
+float: left;
+}
+
+.ThrustIcon{
+    
+    height: 100%;
+    border-radius: 50%;
+    margin-right: 0;
+
+  
+}
+
+.boxShadow{
+    box-shadow: 5px 5px 5px black;
+}
+
+.TransformCenter{
+ 
+    transform: translate(-50%,0);
+}
+
+.titi{
+margin-left: 50%;
+float: left;
+width: 40%;
+padding-top: 20px;
+padding-bottom: 30px;
+}
+
+.tango{
+    float: left;
+    width: 40%;
+    margin-right: 0%;
+    margin-left: 50%;
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+}

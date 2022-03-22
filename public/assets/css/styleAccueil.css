@@ -1,0 +1,71 @@
+body {
+  background-color: #12121a;
+}
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+.kanit {
+  font-family: "Kanit", sans-serif;
+}
+.josefin {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.accueil {
+  color: white;
+  width: 90%;
+  margin: 5vw auto 0;
+  display: flex;
+  flex-direction: row;
+}
+.accueilLeft {
+  width: 40%;
+}
+
+.accueilTitle {
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 1.1;
+  letter-spacing: 0.1em;
+}
+.accueilText {
+  font-weight: 300;
+  font-size: 20px;
+  margin: 3vw 0;
+}
+.buttonAccueil {
+  background-color: #763df2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: 500;
+  font-size: 20px;
+  padding: 0.1vw 3vw;
+}
+
+.accueilRight {
+  width: 60%;
+  text-align: center;
+}
+.accueilImg {
+  width: 80%;
+}
+
+@media (max-width: 1050px) {
+  .accueil {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .accueilLeft {
+    width: 80%;
+    margin-top: 5vw;
+    text-align: center;
+  }
+  .accueilTitle {
+    font-size: 60px;
+  }
+
+}
+@media (max-width: 400px) {
+
+}

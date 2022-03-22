@@ -1,0 +1,200 @@
+@import url("https://fonts.googleapis.com/css?family=DM+Sans:400,500,700&display=swap");
+/* line 3, G:/TitanStudios/public/assets/scss/styleReal.scss */
+* {
+  box-sizing: border-box;
+}
+
+/* line 7, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.fakebody {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+  font-family: 'DM Sans', sans-serif;
+  transition: background .4s ease-in;
+}
+
+/* line 17, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.fakebody.blue {
+  background-color: #428aa6;
+}
+
+/* line 22, G:/TitanStudios/public/assets/scss/styleReal.scss */
+input[type=radio] {
+  display: none;
+}
+
+/* line 26, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: transform .4s ease;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border-radius: 0.25rem;
+  border: none;
+  text-decoration: none;
+}
+
+/* line 41, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.containerCarou {
+  width: 50vw;
+  height: 60vh;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* line 51, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.cards {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 20px;
+}
+
+/* line 58, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.imgCarou {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* line 65, G:/TitanStudios/public/assets/scss/styleReal.scss */
+#item-1:checked ~ .cards #song-3, #item-2:checked ~ .cards #song-1, #item-3:checked ~ .cards #song-2 {
+  transform: translatex(-40%) scale(0.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+/* line 71, G:/TitanStudios/public/assets/scss/styleReal.scss */
+#item-1:checked ~ .cards #song-2, #item-2:checked ~ .cards #song-3, #item-3:checked ~ .cards #song-1 {
+  transform: translatex(40%) scale(0.8);
+  opacity: .4;
+  z-index: 0;
+}
+
+/* line 77, G:/TitanStudios/public/assets/scss/styleReal.scss */
+#item-1:checked ~ .cards #song-1, #item-2:checked ~ .cards #song-2, #item-3:checked ~ .cards #song-3 {
+  transform: translatex(0) scale(1);
+  opacity: 1;
+  z-index: 1;
+}
+
+/*!* line 82, G:/TitanStudios/public/assets/scss/styleReal.scss *!*/
+/*#item-1:checked ~ .cards #song-1 .imgCarou, #item-2:checked ~ .cards #song-2 .imgCarou, #item-3:checked ~ .cards #song-3 .imgCarou {*/
+/*  box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);*/
+/*}*/
+
+/* line 87, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.player {
+  background-color: #fff;
+  border-radius: 8px;
+  min-width: 320px;
+  padding: 16px 10px;
+}
+
+/* line 94, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.upper-part {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  height: 36px;
+  overflow: hidden;
+}
+
+/* line 103, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.play-icon {
+  margin-right: 10px;
+}
+
+/* line 105, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.song-info {
+  width: calc(100% - 32px);
+  display: block;
+}
+
+/* line 110, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.song-info .title {
+  color: #403d40;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+/* line 116, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.sub-line {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* line 122, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.subtitle, .time {
+  font-size: 12px;
+  line-height: 16px;
+  color: #c6c5c6;
+}
+
+/* line 128, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.time {
+  font-size: 12px;
+  line-height: 16px;
+  color: #a5a5a5;
+  font-weight: 500;
+  margin-left: auto;
+}
+
+/* line 136, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.progress-bar {
+  height: 3px;
+  width: 100%;
+  background-color: #e9efff;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* line 144, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.progress {
+  display: block;
+  position: relative;
+  width: 60%;
+  height: 100%;
+  background-color: #2992dc;
+  border-radius: 6px;
+}
+
+/* line 153, G:/TitanStudios/public/assets/scss/styleReal.scss */
+.info-area {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 30px;
+  transition: transform .4s ease-in;
+}
+
+/* line 161, G:/TitanStudios/public/assets/scss/styleReal.scss */
+#item-2:checked ~ .player #test {
+  transform: translateY(0);
+}
+
+/* line 165, G:/TitanStudios/public/assets/scss/styleReal.scss */
+#item-2:checked ~ .player #test {
+  transform: translateY(-40px);
+}
+
+/* line 169, G:/TitanStudios/public/assets/scss/styleReal.scss */
+#item-3:checked ~ .player #test {
+  transform: translateY(-80px);
+}
+
+/*# sourceMappingURL=styleReal.css.map */

@@ -1,0 +1,62 @@
+body {
+    background-color: #12121a;
+}
+
+/* Center website */
+.main {
+    width: 80%;
+    margin: auto;
+}
+
+.titleMain {
+    color: white;
+    width: 80%;
+    margin: auto;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+    padding: 8px;
+}
+
+/* Clear floats after rows */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 33%;
+}
+
+/* Content */
+.content {
+    border: none;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+/* ---------------------- */
+@media (max-width: 1050px) {
+    .containerCarou{
+        height: 30vh !important;
+    }
+    .titleMain h1 {
+        font-size: 1.8rem;
+    }
+    .row{
+        justify-content: center;
+    }
+    .column {
+        width: 66%;
+    }
+}
+
+@media (max-width: 400px) {
+
+}
+
