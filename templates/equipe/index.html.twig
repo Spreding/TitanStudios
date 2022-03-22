@@ -1,30 +1,75 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Équipe{% endblock %}
-{% block titleHeader %}Le studio{% endblock %}
-
+{% block title %}Équipe
+{% endblock %}
+{% block titleHeader %}Le studio
+{% endblock %}
+{% block js %}
+	<link rel="stylesheet" href="{{asset('assets/css/Apropos.css')}}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+{% endblock %}
 {% block body %}
-{# <p class="presentationTitan">Presentation</p> #}
-            
-            <div class="row">
-    {% set nbEquipe = 0 %}
-    {% for equipe in equipes %}
-        {% set nbEquipe = nbEquipe+1 %}
-        {% if nbEquipe %2 !=0 %}
-        <div class="card col-12 col-sm-6 col-md-5">
-        {% else %}
-        <div class="card col-12 col-sm-6 col-md-5 ml-auto presentationBody">
-        {% endif %}
-
-        <img src="/uploads/{{equipe.image}}" class="card-img-top" alt="...">
-        <div class="card-body">
-        <h5 class="card-title">{{equipe.lastName}} {{equipe.name}} - {{equipe.role}}</h5>
-                    <p class="card-text">{{equipe.description}}</p>
-                    </div>
-                        </div>
-        
-    {% endfor %}
-            
-                
-            </div>
+	<div class="PicsHolder">
+		<div class="Left">
+			<img src="{{asset('assets/img/thibaut.jpg')}}" alt="" class="pp">
+			<div class="Boldfont titi TransformCenter CenterContent">
+				Thibaut BAREL
+			</div>
+		</div>
+		<div class="Right">
+			<img src="{{asset('assets/img/tanguy.png')}}" alt="" class="pp2">
+			<div class="Boldfont tango TransformCenter CenterContent ">
+				Tanguy AUGRAS</div>
+		</div>
+	</div>
+	<div class="Bottom">
+		<div class="Left">
+			<div class="VioletSquare basefont">
+				lorem ipsum dolor sit amet consectetur adipisicing elit. temporibus cupiditate perferendis eligendi nam, consequatur voluptatum incidunt qui voluptates consectetur rerum doloremque molestiae quos debitis numquam cum architecto praesentium aspernatur ullam.
+				<img src="{{asset('assets/img/icon.png')}}" alt="" class="Webicon">
+			</div>
+		</div>
+		<div class="Right">
+			<div class="VioletSquare2 basefont">
+				<img src="{{asset('assets/img/icon.png')}}" alt="" class="Webicon">
+				lorem ipsum dolor sit amet consectetur adipisicing elit. temporibus cupiditate perferendis eligendi nam, consequatur voluptatum incidunt qui voluptates consectetur rerum doloremque molestiae quos debitis numquam cum architecto praesentium aspernatur ullam.
+			</div>
+		</div>
+		<div class="Left">
+			<div class="VioletSquare basefont">
+				lorem ipsum dolor sit amet consectetur adipisicing elit. temporibus cupiditate perferendis eligendi nam, consequatur voluptatum incidunt qui voluptates consectetur rerum doloremque molestiae quos debitis numquam cum architecto praesentium aspernatur ullam.
+				<img src="{{asset('assets/img/icon.png')}}" alt="" class="Webicon">
+			</div>
+		</div>
+		<div class="Right">
+			<div class="VioletSquare2 basefont">
+				<img src="{{asset('assets/img/icon.png')}}" alt="" class="Webicon">
+				lorem ipsum dolor sit amet consectetur adipisicing elit. temporibus cupiditate perferendis eligendi nam, consequatur voluptatum incidunt qui voluptates consectetur rerum doloremque molestiae quos debitis numquam cum architecto praesentium aspernatur ullam.
+			</div>
+		</div>
+	</div>
+	<div class="bottomestbottom">
+		<p class=" basefont ThrustTitle">
+			 ILS NOUS ONT FAIT CONFIANCE :
+		</p>
+		<div class="IconHolder">
+			<a href="https://www.chateaudepressac.com/" target="blank" rel="noopener" class="NoDecoration ">
+				<div class="box">
+					<img src="{{asset('assets/img/Pressac_logo.png')}}" alt="" class="ThrustIcon">
+				</div>
+			</a>
+			<a href="https://www.imprimerie-berjon.com/" target="blank" rel="noopener" class="NoDecoration ">
+				<div class="box">
+					<img src="{{asset('assets/img/Berjon.jpg')}}" alt="" class="ThrustIcon">
+				</div>
+			</a>
+			<a href="https://www.exceptio.fr/" target="blank" rel="noopener" class="NoDecoration ">
+				<div class="box">
+					<img src="{{asset('assets/img/exceptio studio.jpg')}}" alt="" class="ThrustIcon">
+				</div>
+			</a>
+		</div>
+	</div>
 {% endblock %}

@@ -24,7 +24,7 @@ class RealisationsController extends AbstractController
     public function index(): Response
     { 
         $realisationsHighlight = $this->entityManager->getRepository(Realisations::class)->findRealisationsHighlighted();
-        $realisations = $this->entityManager->getRepository(Realisations::class)->findBy([], ['id' => 'DESC']);
+        $realisations = $this->entityManager->getRepository(Realisations::class)->findBy([], ['id' => 'ASC']);
         
 
         return $this->render('realisations/index.html.twig', [

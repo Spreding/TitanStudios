@@ -1,33 +1,33 @@
-var nbIte = 1;
-$(document).ready(function() {
-    $("#refreshBut").on("click", function(event) {
-        $.ajax({
-            url: '/',
-            type: 'POST',
-            data: { data: nbIte },
-            dataType: 'json',
-            async: true,
+// var nbIte = 1;
+// $(document).ready(function() {
+//     $("#refreshBut").on("click", function(event) {
+//         $.ajax({
+//             url: '/',
+//             type: 'POST',
+//             data: { data: nbIte },
+//             dataType: 'json',
+//             async: true,
 
-            success: function(data, status) {
-                for (let index = 0; index < data.length; index++) {
+//             success: function(data, status) {
+//                 for (let index = 0; index < data.length; index++) {
 
-                    var actu = $(`<div class="containActu col-12 col-md-6 "> <a href="/actualite/${data[index]["slug"]}" class="linkActu"><div class="Actu"> <div class="article row"><img src="\\uploads\\${data[index]["image"]}" class="insideArticle col-5"/><div class="col-7"><h4>${data[index]["title"]}</h4><p class="txtActu">${data[index]["description"]}</p></div></div></div> </a></div>`);
-                    $('#actuContainer').append(actu);
+//                     var actu = $(`<div class="containActu col-12 col-md-6 "> <a href="/actualite/${data[index]["slug"]}" class="linkActu"><div class="Actu"> <div class="article row"><img src="\\uploads\\${data[index]["image"]}" class="insideArticle col-5"/><div class="col-7"><h4>${data[index]["title"]}</h4><p class="txtActu">${data[index]["description"]}</p></div></div></div> </a></div>`);
+//                     $('#actuContainer').append(actu);
 
-                    if (data[index]['last']) {
-                        $("#refreshBut").hide();
-                    }
+//                     if (data[index]['last']) {
+//                         $("#refreshBut").hide();
+//                     }
 
-                }
-                nbIte++;
+//                 }
+//                 nbIte++;
 
-            },
-            error: function(xhr, textStatus, errorThrown) {
-                alert('Ajax request failed.');
-            }
-        });
-    });
-});
+//             },
+//             error: function(xhr, textStatus, errorThrown) {
+//                 alert('Ajax request failed.');
+//             }
+//         });
+//     });
+// });
 
 
 

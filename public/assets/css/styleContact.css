@@ -1,0 +1,41 @@
+body {
+    background-color: #12121a;
+    color: white;
+}
+
+.contactMain {
+    margin: 5vw auto 0;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.coordonneContact {
+    width: 40%;
+}
+
+.formContact {
+    width: 50%;
+}
+
+@media (max-width: 1050px) {
+    .contactMain {
+        flex-direction: column;
+    }
+    .coordonneContact{
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .formContact{
+
+        width: 100%;
+    }
+    .formContact h2{
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+
+}
+
