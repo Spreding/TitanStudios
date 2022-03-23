@@ -64,6 +64,9 @@ body {
   .accueilTitle {
     font-size: 60px;
   }
+  .accueilImg {
+    width: 100%;
+  }
 
 }
 @media (max-width: 400px) {

@@ -43,6 +43,7 @@ body {
 /* ---------------------- */
 @media (max-width: 1050px) {
     .containerCarou{
+        width: 70vw !important;
         height: 30vh !important;
     }
     .titleMain h1 {
@@ -52,7 +53,8 @@ body {
         justify-content: center;
     }
     .column {
-        width: 66%;
+        width: 90%;
+        margin-bottom: 20px;
     }
 }
 
