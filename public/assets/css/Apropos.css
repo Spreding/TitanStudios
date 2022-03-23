@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     background-color: #12121a;
 }
@@ -6,179 +6,146 @@ body{
 
 /* 400 ou 600 pour le gr */
 
-.Boldfont{
+.Boldfont {
     color: white;
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
 }
 
-.basefont{
+.basefont {
     color: white;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.CenterContent{
+.CenterContent {
     text-align: center;
 }
 
-.NoDecoration{
-    text-decoration: none !important ;
+.NoDecoration {
+    text-decoration: none !important;
 }
 
-.PicsHolder{
-    width: 100%;
-    margin-top: 50px;
-    float: left;
-   
+.PicsHolder {
+    width: 80%;
+    margin: 50px auto 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
-.Left{
-    width: 50%;
-   float: left;
-    background-color: #12121a;
- 
-    height: width/2;
-  
-}
-
-.Right{
-    width: 50%;
-    float: right;
-    background-color: #12121a;
- 
-    height: width/2;
-}
-
-.pp{
+.Photo {
     width: 40%;
-    float: left;
-    margin-left:40%;
-    max-width: 400px;
-   
+    text-align: center;
 }
 
-.pp2{
+.pp {
+    width: 60%;
+    max-width: 400px;
+
+}
+
+.nametext {
+    margin: auto;
     width: 40%;
-    float: right;
-    margin-right: 40%;
-    max-width: 400px;
+    padding-top: 20px;
 }
 
-.Bottom{
-    width: 100%;
-   
+
+
+
+
+.Bottom {
+    width: 80%;
     padding-top: 50px;
-    float: left;
- 
+    margin: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.VioletSquare{
-    
-    width: 40%;
-    margin-left: 60%;
+
+.VioletSquare {
+    margin: 100px auto 0;
+    width: 70%;
     border-style: solid;
     border-color: #763df2;
     border-width: 20%;
     border-radius: 2px;
-    transform: translate(-50%,0);
-margin-top: 100px;
-    padding:20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding: 50px 50px;
     position: relative;
 }
 
-.VioletSquare2{
-   
-    width: 40%;
-    margin-left: 40%;
-    border-style: solid;
-    border-color: #763df2;
-    border-width: 20%;
-    border-radius: 2px;
-    transform: translate(-50%,0);
-    margin-top: 100px;
-    padding:20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    position: relative;
-}
-
-.Webicon{
+.Webicon {
     position: absolute;
     top: 0;
     right: 0;
     height: 80px;
-    transform: translate(-15%,-60%);
+    transform: translate(-15%, -60%);
+}
+.Webicon2{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 80px;
+    transform: translate(10%, -60%);
 }
 
-.bottomestbottom{
-    float: left;
-    width: 100%;
-  
+.bottomestbottom {
+    width: 80%;
+    margin: auto;
+
 
 }
 
 
-.IconHolder{
-    width: 100%;
+.IconHolder {
+    width: 80%;
     height: 200px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 50px auto;
+
+
 }
 
 
-.ThrustTitle{
+.ThrustTitle {
     font-size: 30px;
-    margin-left: 0%;
-    padding-left: 0%;
+    margin-left: 0;
+    padding-left: 0;
     margin-top: 150px;
     width: 100%;
     text-align: center;
 
 }
 
-.box{
-width: 33.3%;
+.box {
+    width: 33.3%;
 
-height: 100%;
-text-align: center;
-float: left;
+    height: 100%;
+    text-align: center;
+    float: left;
 }
 
-.ThrustIcon{
-    
+.ThrustIcon {
+
     height: 100%;
     border-radius: 50%;
     margin-right: 0;
 
-  
+
 }
 
-.boxShadow{
+.boxShadow {
     box-shadow: 5px 5px 5px black;
 }
 
-.TransformCenter{
- 
-    transform: translate(-50%,0);
+.TransformCenter {
+
+    transform: translate(-50%, 0);
 }
 
-.titi{
-margin-left: 60%;
-float: left;
-width: 40%;
-padding-top: 20px;
-}
 
-.tango{
-    float: right;
-    width: 40%;
-    margin-right: 20%;
-    padding-top: 20px;
-    margin-left: 0%;
-}
 
 
 /*
@@ -188,183 +155,174 @@ padding-top: 20px;
    \ \/ / _ \ '__/ __| |/ _ \| '_ \  | |\/| |/ _ \| '_ \| | |/ _ \
     \  /  __/ |  \__ \ | (_) | | | | | |  | | (_) | |_) | | |  __/
      \/ \___|_|  |___/_|\___/|_| |_| |_|  |_|\___/|_.__/|_|_|\___|
-                                                                                                                               
-                                                                                         
+
 */
 
 @media screen and (max-width: 900px) {
-   
-.Boldfont{
-    color: white;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-}
 
-.basefont{
-    color: white;
-    font-family: 'Josefin Sans', sans-serif;
-}
+    .Boldfont {
+        color: white;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: bold;
+    }
 
-.CenterContent{
-    text-align: center;
-}
+    .basefont {
+        color: white;
+        font-family: 'Josefin Sans', sans-serif;
+    }
 
-.NoDecoration{
-    text-decoration: none !important ;
-}
+    .CenterContent {
+        text-align: center;
+    }
 
-.PicsHolder{
-    width: 100%;
-    margin-top: 50px;
-    float: left;
-   
-}
+    .NoDecoration {
+        text-decoration: none !important;
+    }
 
-.Left{
-    width: 100%;
-   float: left;
-    background-color: #12121a;
- 
-    height: width/2;
-  
-}
+    .PicsHolder {
+        flex-direction: column;
 
-.Right{
-    width: 100%;
-    float: left;
-    background-color: #12121a;
- 
-    height: width/2;
-}
-
-.pp{
-    width: 70%;
-    float: left;
-    margin-left:15%;
-    max-width: 400px;
-   
-}
-
-.pp2{
-    width: 70%;
-    float: right;
-    margin-right: 15%;
-    max-width: 400px;
-}
-
-.Bottom{
-    width: 100%;
-   
-    padding-top: 0px;
-    float: left;
- 
-}
-
-.VioletSquare{
-    
-    width: 80%;
-    margin-left: 50%;
-    border-style: solid;
-    border-color: #763df2;
-    border-width: 20%;
-    border-radius: 2px;
-    transform: translate(-50%,0);
-    margin-top: 100px;
-    padding:20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    position: relative;
-}
-
-.VioletSquare2{
-   
-    width: 80%;
-    margin-left: 50%;
-    border-style: solid;
-    border-color: #763df2;
-    border-width: 20%;
-    border-radius: 2px;
-    transform: translate(-50%,0);
-    margin-top: 100px;
-    padding:20px;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    position: relative;
-}
-
-.Webicon{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 80px;
-    transform: translate(-15%,-60%);
-}
-
-.bottomestbottom{
-    float: left;
-    width: 100%;
-  
-
-}
-
-.IconHolder{
-    width: 100%;
-    height: 100px;
-    margin-bottom: 50px;
-    margin-top: 50px;
-    
-}
+    }
+    .pp{
+        width: 70%;
+    }
+    .Photo{
+        width: 100%;
+        margin-bottom: 20px;
+    }
 
 
-.ThrustTitle{
-    font-size: 30px;
-    margin-left: 0%;
-    padding-left: 0%;
-    margin-top: 50px;
 
-}
 
-.box{
-width: 33.3%;
+    .Bottom {
+        width: 100%;
 
-height: 100%;
-text-align: center;
-float: left;
-}
+        padding-top: 0;
+        float: left;
 
-.ThrustIcon{
-    
-    height: 100%;
-    border-radius: 50%;
-    margin-right: 0;
+    }
+    .Left {
+        width: 100%;
+        float: left;
+        background-color: #12121a;
 
-  
-}
+        height: width/2;
 
-.boxShadow{
-    box-shadow: 5px 5px 5px black;
-}
+    }
 
-.TransformCenter{
- 
-    transform: translate(-50%,0);
-}
+    .Right {
+        width: 100%;
+        float: left;
+        background-color: #12121a;
 
-.titi{
-margin-left: 50%;
-float: left;
-width: 40%;
-padding-top: 20px;
-padding-bottom: 30px;
-}
+        height: width/2;
+    }
 
-.tango{
-    float: left;
-    width: 40%;
-    margin-right: 0%;
-    margin-left: 50%;
-    padding-top: 20px;
-    padding-bottom: 30px;
-}
+    .VioletSquare {
+
+        width: 80%;
+        margin-left: 50%;
+        border-style: solid;
+        border-color: #763df2;
+        border-width: 20%;
+        border-radius: 2px;
+        transform: translate(-50%, 0);
+        margin-top: 100px;
+        padding: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        position: relative;
+    }
+
+    .VioletSquare2 {
+
+        width: 80%;
+        margin-left: 50%;
+        border-style: solid;
+        border-color: #763df2;
+        border-width: 20%;
+        border-radius: 2px;
+        transform: translate(-50%, 0);
+        margin-top: 100px;
+        padding: 20px;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        position: relative;
+    }
+
+    .Webicon {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 80px;
+        transform: translate(-15%, -60%);
+    }
+
+    .bottomestbottom {
+        float: left;
+        width: 100%;
+
+
+    }
+
+    .IconHolder {
+        width: 100%;
+        height: 100px;
+        margin-bottom: 50px;
+        margin-top: 50px;
+
+    }
+
+
+    .ThrustTitle {
+        font-size: 30px;
+        margin-left: 0;
+        padding-left: 0;
+        margin-top: 50px;
+
+    }
+
+    .box {
+        width: 33.3%;
+
+        height: 100%;
+        text-align: center;
+        float: left;
+    }
+
+    .ThrustIcon {
+
+        height: 100%;
+        border-radius: 50%;
+        margin-right: 0;
+
+
+    }
+
+    .boxShadow {
+        box-shadow: 5px 5px 5px black;
+    }
+
+    .TransformCenter {
+
+        transform: translate(-50%, 0);
+    }
+
+    .titi {
+        margin-left: 50%;
+        float: left;
+        width: 40%;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
+
+    .tango {
+        float: left;
+        width: 40%;
+        margin-right: 0;
+        margin-left: 50%;
+        padding-top: 20px;
+        padding-bottom: 30px;
+    }
 
 }
