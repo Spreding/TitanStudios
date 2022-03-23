@@ -81,6 +81,11 @@ class Realisations
      */
     private $text;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $linkWeb;
+
     public function __construct()
     {
         $this->linksRealisations = new ArrayCollection();
@@ -249,6 +254,18 @@ class Realisations
     public function setText(string $text): self
     {
         $this->text = $text;
+
+        return $this;
+    }
+
+    public function getLinkWeb(): ?string
+    {
+        return $this->linkWeb;
+    }
+
+    public function setLinkWeb(string $linkWeb): self
+    {
+        $this->linkWeb = $linkWeb;
 
         return $this;
     }
